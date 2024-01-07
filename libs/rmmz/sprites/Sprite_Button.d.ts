@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/ban-types */
-import { Sprite_Clickable } from "./Sprite_Clickable";
-import { Rectangle } from "../rmmz_core";
+
 
 declare interface ButtonTable {
     cancel: { x: 0, w: 2 },
@@ -38,7 +36,4 @@ declare class Sprite_Button extends Sprite_Clickable {
     public onMouseEnter(): void;
     public onMouseExit(): void;
     public onPress(): void;
-
 }
-
-export { Sprite_Button, ButtonTable }

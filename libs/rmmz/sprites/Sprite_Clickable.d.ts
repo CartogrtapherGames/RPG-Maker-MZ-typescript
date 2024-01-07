@@ -1,5 +1,3 @@
-import { Sprite, Rectangle } from "../rmmz_core";
-
 
 declare abstract class Sprite_Clickable extends Sprite {
 
@@ -21,4 +19,3 @@ declare abstract class Sprite_Clickable extends Sprite {
     public abstract onPress(): void;
     public abstract onClick(): void;
 }
-export { Sprite_Clickable }

@@ -1,10 +1,16 @@
-import { Sprite } from "../rmmz_core";
-
-import { Game_Battler } from "../rmmz_objects";
-
-import { Sprite_Clickable, Sprite_Damage } from '.';
 
 declare class Sprite_Battler extends Sprite_Clickable {
+
+    protected _battler: Game_Battler;
+    protected _damages: Sprite_Damage[];
+    protected _homeX: number;
+    protected _homeY: number;
+    protected _offsetX: number;
+    protected _offsetY: number;
+    protected _targetOffsetX: number;
+    protected _targetOffsetY: number;
+    protected _movementDuration: number;
+    protected _selectionEffectCount: number;
 
     constructor(battler: Game_Battler);
 
@@ -51,4 +57,3 @@ declare class Sprite_Battler extends Sprite_Clickable {
 
 }
 
-export { Sprite_Battler };

@@ -66,4 +66,3 @@ declare class Game_Message {
     public allText(): string;
     public isRTL(): boolean
 }
-export {Game_Message}

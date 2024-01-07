@@ -1,4 +1,3 @@
-import { RPG } from "../RPG";
 
 declare class Game_Item {
 
@@ -16,10 +15,9 @@ declare class Game_Item {
     public isEquipItem(): boolean;
     public isNull(): string;
     public itemId(): number;
-    public object(): RPG.DataItemBase;
-    public setObject(item: Record<string, unknown>): void;
+    public object(): DataItemBase;
+
+    public setObject(item: DataItemBase): void;
     public setEquip(isWeapon: boolean, itemId: number): void;
 
 }
-
-export { Game_Item };

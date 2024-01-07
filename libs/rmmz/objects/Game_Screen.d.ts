@@ -1,4 +1,4 @@
-import { Game_Picture } from "./Game_Picture";
+
 
 declare class Game_Screen {
 
@@ -30,7 +30,7 @@ declare class Game_Screen {
     private _weatherPowerTarget: number;
     private _weatherDuration: number;
 
-    private _pictures/*: Game_Pictures[]*/; // FIXME
+    private _pictures: Game_Pictures[];
 
     constructor();
     public initialize(): void;
@@ -80,4 +80,3 @@ declare class Game_Screen {
     public tintPicture(pictureId: number, tone: number[], duration: number): void;
     public erasePicture(pictureId: number): void;
 }
-export { Game_Screen }

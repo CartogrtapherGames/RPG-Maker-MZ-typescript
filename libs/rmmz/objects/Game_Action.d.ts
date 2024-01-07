@@ -1,11 +1,5 @@
-import { RPG } from "../RPG";
 
-import {
-    Game_Item,
-    Game_Battler,
-    Game_BattlerBase,
-    Game_Unit
-} from ".";
+/*
 
 // TODO : FIX THE TYPING TO GAME_UNITY
 declare class Game_Action {
@@ -45,9 +39,9 @@ declare class Game_Action {
     public setGuard(): void;
     public setSkill(skillId: number): void;
     public setItem(itemId: number): void;
-    public setItemObject(object: Record<string, unknown>): RPG.DataItemBase;
+    public setItemObject(object: Record<string, unknown>): DataItemBase;
     public setTarget(targetIndex: number): void;
-    public item(): RPG.DataItemBase;
+    public item(): DataItemBase;
     public isSkill(): boolean;
     public isItem(): boolean;
     public numRepeats(): number;
@@ -90,5 +84,5 @@ declare class Game_Action {
     public targetsForFriends(): unknown;
     public randomTargets(unit: Game_Unit<Game_Battler>);
 }
-
+*/
 // TODO : not ready to distribution since it lacks a lots of context

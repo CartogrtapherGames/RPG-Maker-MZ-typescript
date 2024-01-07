@@ -17,5 +17,3 @@ declare class Game_SelfSwitches {
     public setValue(key: string, value: boolean): void;
     public onChange(): void;
 }
-
-export { Game_SelfSwitches }

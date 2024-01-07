@@ -1,7 +1,7 @@
 import { RPG } from "../RPG";
 
 import { Game_Actor } from './Game_Actor';
-import { Game_Enemy } from './Game_Enemy';
+import { Game_Enemy } from '../../rmmz/objects/Game_Enemy';
 
 declare namespace Game_BattlerBase {
 

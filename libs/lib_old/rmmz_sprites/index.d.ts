@@ -1,8 +1,8 @@
-export * from './Sprite_Button';
-export * from './Sprite_Character';
+export * from '../../rmmz/sprites/Sprite_Button';
+export * from '../../rmmz/sprites/Sprite_Character';
 
-export * from './Sprite_Clickable';
-export * from './Sprite_Battler';
+export * from '../../rmmz/sprites/Sprite_Clickable';
+export * from '../../rmmz/sprites/Sprite_Battler';
 
 export * from './Sprite_Damage';
 

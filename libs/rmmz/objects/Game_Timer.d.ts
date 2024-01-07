@@ -14,5 +14,3 @@ declare class Game_Timer {
     public onExpire(): void;
 
 }
-
-export {Game_Timer}

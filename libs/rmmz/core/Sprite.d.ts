@@ -18,7 +18,8 @@ declare class Sprite extends PIXI.Sprite {
     public setFrame(x: number, y: number, width: number, height: number): void;
     public setHue(hue: number): void;
     public show(): void;
-    public update(): void;
+
+  public update(): void;
     public updateVisibility(): void;
 
 }

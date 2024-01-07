@@ -10,5 +10,3 @@ declare class Game_Variables {
     public setValue(variableId: number, value: number | string): void;
     public onChange(): void;
 }
-
-export { Game_Variables }

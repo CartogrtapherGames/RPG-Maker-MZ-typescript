@@ -1,6 +1,4 @@
-import { RPG } from "../RPG";
 
-import { Game_Battler, Game_Party, Game_Troop, Game_Action } from '.';
 
 declare namespace Game_Enemy {
     export enum ItemKind {
@@ -68,4 +66,3 @@ declare class Game_Enemy extends Game_Battler {
 
 }
 
-export { Game_Enemy };

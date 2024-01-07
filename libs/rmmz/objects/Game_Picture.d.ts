@@ -53,5 +53,3 @@ declare class Game_Picture {
     public easeOut(t: number,exponent: number): number;
     public easeInOut(t: number, exponent: number): number;
 }
-
-export {Game_Picture}

@@ -1,4 +1,4 @@
-import { AudioManager } from "../rmmz_managers";
+
 
 declare class Game_System {
 
@@ -76,5 +76,3 @@ declare class Game_System {
     public windowPadding(): number
 
 }
-
-export { Game_System };
