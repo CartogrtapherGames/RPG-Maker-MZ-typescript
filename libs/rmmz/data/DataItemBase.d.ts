@@ -1,4 +1,4 @@
-interface DataItemBase extends DataBase {
+interface DataItemBase extends BaseData {
   description: string;
   iconIndex: number;
 }

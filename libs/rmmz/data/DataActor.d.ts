@@ -1,5 +1,5 @@
 
-interface DataActor extends DataBase {
+interface DataActor extends BaseData {
   battlerName: string;
   characterIndex: number;
   characterName: string;
@@ -7,7 +7,7 @@ interface DataActor extends DataBase {
   equips: number[];
   faceIndex: number;
   faceName: string;
-  traits: Trait[];
+  traits: RPG.Trait[];
   initialLevel: number;
   maxLevel: number;
   nickname: string;
