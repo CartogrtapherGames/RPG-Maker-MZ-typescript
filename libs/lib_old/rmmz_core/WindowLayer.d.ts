@@ -1,4 +1,4 @@
-
+import * as PIXI from "pixi.js";
 
 declare class WindowLayer extends PIXI.Container {
 
@@ -6,6 +6,7 @@ declare class WindowLayer extends PIXI.Container {
     
     public render(renderer: PIXI.Renderer): void;
     public update(): void;
+
 }
 
-
+export { WindowLayer };
