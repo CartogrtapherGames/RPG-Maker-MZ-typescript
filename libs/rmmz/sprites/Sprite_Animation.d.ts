@@ -1,14 +1,23 @@
-import * as PIXI from 'pixi.js';
+import {Game_Battler} from "../../lib_old";
+import effekseer from "../../lib_old/external/effekseer";
 
-import { RPG } from "../RPG";
-
-import { Sprite, Point } from "../rmmz_core";
-
-import { Game_Battler } from "../rmmz_objects";
-
-import { Sprite_AnimationMV } from '.';
 
 declare class Sprite_Animation extends Sprite {
+
+    protected _targets: Game_Battler[];
+    protected _animation: DataAnimation;
+    protected _mirror: boolean;
+    protected _delay: number;
+    protected _previous: Sprite_Animation | Sprite_AnimationMV;
+    protected _effect: effekseer.EffekseerEffect;
+    protected _handle: effekseer.EffekseerHandle;
+    protected _playing: boolean;
+    protected _started: boolean;
+    protected _frameIndex: number;
+    protected _maxTimingFrames: number;
+    protected _flashColor: [number,number,number,number];
+    protected _flashDuration: number;
+    protected _viewportSize: number;
 
     constructor();
 
@@ -16,7 +25,7 @@ declare class Sprite_Animation extends Sprite {
 
     public setup(
         targets: Game_Battler[],
-        animation: RPG.DataAnimation,
+        animation: DataAnimation,
         mirror: boolean,
         delay: number,
         previous: Sprite_Animation | Sprite_AnimationMV
@@ -55,4 +64,3 @@ declare class Sprite_Animation extends Sprite {
 
 }
 
-export { Sprite_Animation };

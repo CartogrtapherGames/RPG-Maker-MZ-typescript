@@ -1,8 +1,10 @@
-import { Sprite, Bitmap } from "../rmmz_core";
-
-import { Game_Battler } from "../rmmz_objects";
 
 declare class Sprite_Damage extends Sprite {
+
+    protected _duration: number;
+    protected _flashColor: [number,number,number,number];
+    protected _flashDuration: number;
+    protected _colorType: number;
 
     constructor();
  
@@ -34,5 +36,3 @@ declare class Sprite_Damage extends Sprite {
     public isPlaying(): boolean;
 
 }
-
-export { Sprite_Damage };

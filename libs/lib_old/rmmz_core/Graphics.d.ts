@@ -13,6 +13,7 @@ declare namespace Graphics {
     export let defaultScale: number;
 
     export const effekseer: effekseer.EffekseerContext;
+    const something = effekseer.play();
 
     export let frameCount: number;
     export let height: number;

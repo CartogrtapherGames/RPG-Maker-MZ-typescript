@@ -1,17 +1,29 @@
-import { RPG } from "../RPG";
-
-import { RGBA, Sprite } from "../rmmz_core";
-import { Game_Battler } from "../rmmz_objects";
 
 declare class Sprite_AnimationMV extends Sprite {
 
-    constructor();
+    protected _targets: Game_Battler[];
+    protected _animation: DataAnimationMV;
+    protected _mirror: boolean;
+    protected _delay: number;
+    protected _rate: number;
+    protected _duration: number;
+    protected _flashColor: [number,number,number,number];
+    protected _flashDuration: number;
+    protected _screenFlashDuration: number;
+    protected _hidingDuration: number;
+    protected _hue1: number;
+    protected _hue2: number;
+    protected _bitmap1: Bitmap;
+    protected _bitmap2: Bitmap;
+    protected _cellSprites: Sprite[];
+    protected _screenFlashSprite: ScreenSprite;
 
+    constructor();
     public initMembers(): void;
 
     public setup(
         targets: Game_Battler[],
-        animation: RPG.DataAnimation, // TODO: DataAnimationMV
+        animation: DataAnimationMV,
         mirror: boolean,
         delay: number
     ): void;
@@ -57,4 +69,3 @@ declare class Sprite_AnimationMV extends Sprite {
     public onEnd(): void;
 }
 
-export { Sprite_AnimationMV };
