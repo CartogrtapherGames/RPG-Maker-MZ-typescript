@@ -1,6 +1,4 @@
-import * as PIXI from "pixi.js";
 
-import { Point } from ".";
 
 declare class Weather extends PIXI.Container {
 
@@ -13,5 +11,3 @@ declare class Weather extends PIXI.Container {
     public update(): void;
     public destroy(): void;
 }
-
-export { Weather };
