@@ -1,5 +1,4 @@
-import {Game_Battler} from "../../lib_old";
-import effekseer from "../../lib_old/external/effekseer";
+
 
 
 declare class Sprite_Animation extends Sprite {

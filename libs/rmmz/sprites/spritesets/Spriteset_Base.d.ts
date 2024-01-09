@@ -1,0 +1,46 @@
+
+
+
+declare abstract class Spriteset_Base extends Sprite{
+
+  protected _animationSprites: Sprite_Animation[] | Sprite_AnimationMV;
+  protected _baseSprite: Sprite;
+  protected _blackSprite: ScreenSprite;
+  protected _baseColorFilter: ColorFilter;
+  protected _pictureContainer: Sprite;
+  protected _timerSprite: Sprite_Timer;
+  protected _overallColorFilter: ColorFilter;
+  protected _effectsContainer: PIXI.Container;
+
+  constructor();
+  initialize();
+  override destroy(options?: { children?: boolean; texture?: boolean; baseTexture?: boolean });
+  abstract loadSystemImages();
+  createLowerLayer();
+  createUpperLayer();
+  override update();
+  createBaseSprite();
+  createBaseFilters();
+  createPictures();
+  pictureContainerRect(): Rectangle;
+  createTimer();
+  createOverallFilters();
+  updateBaseFilters();
+  updateOverallFilters();
+  updatePosition();
+  abstract findTargetSprite();
+  updateAnimations();
+  processAnimationRequests();
+  createAnimation(request: {target: Game_CharacterBase[],animationId: number,mirror: boolean});
+  createAnimationSprite();
+  isMVAnimation(animation:DataAnimation | DataAnimationMV): boolean;
+  makeTargetSprites(targets: Game_CharacterBase[]): Sprite_Character[];
+  lastAnimationSprite(): Sprite_Animation | Sprite_AnimationMV;
+  isAnimationForEach(animation: DataAnimation | DataAnimationMV): boolean;
+  animationBaseDelay(): number;
+  animationNextDelay(): number;
+  animationShouldMirror(target: Game_CharacterBase): boolean;
+  removeAnimation(sprite: Sprite_Character);
+  removeAllAnimations();
+  isAnimationPlaying();
+}
