@@ -1,11 +1,7 @@
-
-
-declare namespace Game_Enemy {
-    export enum ItemKind {
-        Item = 1,
-        Weapon = 2,
-        Armor = 3
-    }
+declare enum ItemKind {
+    ITEM = 1,
+    WEAPON = 2,
+    ARMOR = 3
 }
 
 declare class Game_Enemy extends Game_Battler {
@@ -14,25 +10,25 @@ declare class Game_Enemy extends Game_Battler {
 
     public setup(enemyId: number, x: number, y: number): void;
 
-    public isEnemy(): true;
+    public friendsUnit(): Game_Party;
+    public opponentsUnit(): Game_Troop;
 
-    public friendsUnit(): Game_Troop;
-    public opponentsUnit(): Game_Party;
+    public isEnemy(): true;
 
     public index(): number;
 
     public isBattleMember(): boolean;
 
     public enemyId(): number;
-    public enemy(): RPG.DataEnemy;
+    public enemy(): DataEnemy;
 
     public exp(): number;
     public gold(): number;
 
-    public makeDropItems(): RPG.DataItemBase[];
+    public makeDropItems(): DataItemBase[];
     public dropItemRate(): number;
 
-    public itemObject(kind: Game_Enemy.ItemKind, dataId: number): RPG.DataItemBase;
+    public itemObject(kind: ItemKind, dataId: number): DataItemBase;
 
     public isSpriteVisible(): boolean;
 
@@ -55,14 +51,13 @@ declare class Game_Enemy extends Game_Battler {
     public meetsTurnCondition(param1: number, param2: number): boolean;
     public meetsHpCondition(param1: number, param2: number): boolean;
     public meetsMpCondition(param1: number, param2: number): boolean;
-    public meetsStateCondition(param1: number, param2: number): boolean;
-    public meetsPartyLevelCondition(param1: number, param2: number): boolean;
-    public meetsSwitchCondition(param1: number, param2: number): boolean;
+    public meetsStateCondition(paramId: number): boolean;
+    public meetsPartyLevelCondition(paramId: number): boolean;
+    public meetsSwitchCondition(paramId: number): boolean;
 
     public isActionValid(action: Game_Action): boolean;
 
     public selectAction(actionList: Game_Action[], ratingZero: number): Game_Action | null;
     public selectAllActions(actionList: Game_Action[]): void;
-
 }
 

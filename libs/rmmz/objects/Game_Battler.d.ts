@@ -196,14 +196,14 @@ declare abstract class Game_Battler extends Game_BattlerBase {
   public performDamage(): void;
   public performCollapse(): void;
 
-  public transform(target: Game_Battler): void;
+  public transform(enemyId: number): void;
 
-  public meetsCondition(paramId: number): boolean;
+  public meetsCondition(action: Game_Action): boolean;
   public meetsTurnCondition(paramId1: number, paramId2: number): boolean;
   public meetsHpCondition(paramId: number, value: number): boolean;
   public meetsMpCondition(paramId: number, value: number): boolean;
   public meetsStateCondition(paramId: number): boolean;
-  public meetsPartyLevelCondition(value: number): boolean;
+  public meetsPartyLevelCondition(paramId: number): boolean;
   public meetsSwitchCondition(paramId: number): boolean;
 
   public isActionValid(action: Game_Action): boolean;
