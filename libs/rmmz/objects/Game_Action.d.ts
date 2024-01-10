@@ -1,7 +1,3 @@
-
-/*
-
-// TODO : FIX THE TYPING TO GAME_UNITY
 declare class Game_Action {
 
     public readonly EFFECT_RECOVER_HP: number;
@@ -20,20 +16,20 @@ declare class Game_Action {
     public readonly HITTYPE_PHYSICAL: number;
     public readonly HITTYPE_MAGICAL: number;
     
-    private _subjectActorId: number;
-    private _subjectEnemyIndex: number;
-    private _forcing: boolean;
-    private _item: Game_Item;
-    private _targetIndex: number;
+    protected _subjectActorId: number;
+    protected _subjectEnemyIndex: number;
+    protected _forcing: boolean;
+    protected _item: Game_Item;
+    protected _targetIndex: number;
 
-    constructor(subject: Game_BattlerBase, forcing: boolean);
+    constructor(subject: Game_Battler, forcing: boolean);
     
-    public initialize(subject: Game_BattlerBase, forcing: boolean);
+    public initialize(subject: Game_Battler, forcing: boolean): void;
     public clear(): void;
-    public setSubject(subject: Game_BattlerBase): void;
-    public subject(): Game_BattlerBase;
-    public friendsUnit(): Game_BattlerBase;
-    public opponentsUnit(): Game_BattlerBase; // TODO : make the type more clear?
+    public setSubject(subject: Game_Battler): void;
+    public subject(): Game_Battler;
+    public friendsUnit(): Game_Battler;
+    public opponentsUnit(): Game_Battler;
     public setEnemyAction(action: unknown): void;
     public setAttack(): void;
     public setGuard(): void;
@@ -79,10 +75,58 @@ declare class Game_Action {
     public makeTargets(): number[];
     public repeatTargets(targets): number[];
     public confusionTarget(): boolean;
-    public targetsForEveryone(): Game_BattlerBase[];
-    public targetsForOpponents(): unknown;
-    public targetsForFriends(): unknown;
-    public randomTargets(unit: Game_Unit<Game_Battler>);
+    public targetsForEveryone(): Game_Battler[];
+    public targetsForOpponents(): Game_Battler[];
+    public targetsForFriends(): Game_Battler[];
+    public randomTargets(unit: Game_Unit) : Game_Battler[];
+    public targetsForDead(unit: Game_Unit): Game_Battler[];
+    public targetsForAlive(unit: Game_Unit): Game_Battler[];
+    public targetsForDeadAndAlive(unit: Game_Unit): Game_Battler[];
+    public evaluate(): number;
+    public itemTargetCandidates(): Game_Battler[];
+    public evaluateWithTarget(target: Game_Battler): number;
+    public testApply(target: Game_Battler): number;
+    public testLifeAndDeath(target: Game_Battler): boolean;
+    public hasItemAnyValidEffects(target: Game_Battler): boolean;
+    public testItemEffect(target: Game_Battler, effect: number): boolean;
+    public itemCnt(target: Game_Battler): number;
+    public itemMrf(target: Game_Battler): number;
+    public itemHit(target: Game_Battler): number;
+    public itemEva(target: Game_Battler): number;
+    public itemCri(target: Game_Battler): number;
+    public apply(target: Game_Battler): void;
+    public makeDamageValue(target: Game_Battler, critical: boolean): number;
+    public evalDamageFormula(target: Game_Battler): number;
+    public elementsMaxRate(target: Game_Battler, elements: number[]): number;
+    public applyCritical(damage: number): number;
+    public applyVariance(damage: number, variance: number): number;
+    public applyGuard(damage: number, target: Game_Battler): number;
+    public executeDamage(target: Game_Battler, value: number): number;
+    public executeHpDamage(target: Game_Battler, value: number): number;
+    public executeMpDamage(target: Game_Battler, value: number): number;
+    public gainDrainedHp(value: number): void;
+    public gainDrainedMp(value: number): void;
+    public applyItemEffect(target: Game_Battler, effect: number): void;
+    public itemEffectRecoverHp(target: Game_Battler, effect: number): void;
+    public itemEffectRecoverMp(target: Game_Battler, effect: number): void;
+    public itemEffectGainTp(target: Game_Battler, effect: number): void;
+    public itemEffectAddState(target: Game_Battler, effect: number): void;
+    public itemEffectAddAttackState(target: Game_Battler, effect: number): void;
+    public itemEffectAddNormalState(target: Game_Battler, effect: number): void;
+    public itemEffectRemoveState(target: Game_Battler, effect: number): void;
+    public itemEffectAddBuff(target: Game_Battler, effect: number): void;
+    public itemEffectAddDebuff(target: Game_Battler, effect: number): void;
+    public itemEffectRemoveBuff(target: Game_Battler, effect: number): void;
+    public itemEffectRemoveDebuff(target: Game_Battler, effect: number): void;
+    public itemEffectSpecial(target: Game_Battler, effect: number): void;
+    public itemEffectGrow(target: Game_Battler, effect: number): void;
+    public itemEffectLearnSkill(target: Game_Battler, effect: number): void;
+    public itemEffectCommonEvent(target: Game_Battler, effect: number): void;
+    public makeSuccess(target: Game_Battler): void;
+    public applyItemUserEffect(): void;
+    public lukEffectRate(target: Game_Battler): number;
+    public applyGlobal(): void;
+    public updateLastUsed(): void;
+    public updateLastSubject(): void;
+    public updateLastTarget(): void;
 }
-*/
-// TODO : not ready to distribution since it lacks a lots of context
