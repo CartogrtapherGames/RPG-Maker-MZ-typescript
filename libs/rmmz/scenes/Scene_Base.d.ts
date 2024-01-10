@@ -1,8 +1,3 @@
-import {Stage} from "../rmmz_core";
-import {WindowLayer} from "../rmmz_core";
-import {ColorFilter} from "../rmmz_core";
-import {Window} from "../rmmz_core";
-import {Sprite} from "../rmmz_core";
 
 declare abstract class Scene_Base extends Stage {
 
@@ -104,5 +99,4 @@ declare abstract class Scene_Base extends Stage {
     public onAutosaveFailure(): void;
 }
 
-export {Scene_Base}
 

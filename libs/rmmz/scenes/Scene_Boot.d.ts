@@ -1,17 +1,17 @@
-import {Scene_Base} from ".";
+
 
 
 declare class Scene_Boot extends Scene_Base {
 
     protected _databaseLoaded: boolean;
 
-    constructor(...arguments: never[]);
+    constructor();
 
     public initialize(): void;
 
-    public create(): void;
+    override create(): void;
 
-    public isReady(): boolean;
+    override isReady(): boolean;
 
     public onDatabaseLoaded(): void;
 
@@ -25,7 +25,7 @@ declare class Scene_Boot extends Scene_Base {
 
     public isPlayerDataLoaded(): void;
 
-    public start(): void;
+    override start(): void;
 
     public startNormalGame(): void;
 
@@ -40,4 +40,3 @@ declare class Scene_Boot extends Scene_Base {
     public checkPlayerLocation(): void;
 }
 
-export {Scene_Boot}

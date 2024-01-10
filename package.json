@@ -1,0 +1,16 @@
+{
+  "name": "rpg-maker-mz-typescript",
+  "version": "1.0.0",
+  "description": "the typescript definitions files for rpg maker MZ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "tslint": "^6.1.3",
+    "typescript": "^5.3.3"
+  }
+}

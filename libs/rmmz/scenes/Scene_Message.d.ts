@@ -1,14 +1,4 @@
-import {Scene_Base} from ".";
-import {
-    Window_ChoiceList,
-    Window_EventItem,
-    Window_Gold,
-    Window_Message,
-    Window_NameBox,
-    Window_NumberInput,
-    Window_ScrollText
-} from "../rmmz_windows";
-import {Rectangle} from "../rmmz_core";
+
 
 declare class Scene_Message extends Scene_Base {
 
@@ -20,7 +10,7 @@ declare class Scene_Message extends Scene_Base {
     protected _numberInputWindow: Window_NumberInput;
     protected _eventItemWindow: Window_EventItem;
 
-    constructor(...arguments: never[]);
+    constructor();
 
     public initialize(): void;
 
@@ -54,5 +44,3 @@ declare class Scene_Message extends Scene_Base {
 
     public create(): void;
 }
-
-export {Scene_Message}

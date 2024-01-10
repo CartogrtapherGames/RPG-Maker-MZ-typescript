@@ -1,5 +1,7 @@
 
 
+// @ts-ignore
+// in this case we have no choice as ...ts will throw actual error.
 declare class Window extends PIXI.Container {
 
     public active: boolean;

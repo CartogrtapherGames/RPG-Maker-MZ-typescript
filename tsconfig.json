@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
-    "target": "es2016",
-    "module": "none",
+    "target": "es2015",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "lib": ["ES6", "ES5", "ES2015.Iterable", "DOM", "DOM.Iterable"],
+    "declaration": true,
+    "noEmit": true,
+    "strict": false,
     "esModuleInterop": true,
+    "skipLibCheck": false,
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "skipLibCheck": true
   },
-  "include": [
-    "./libs/**/*.d.ts",
- 
-  ]
+  "include": ["./libs/**/*.ts"]
 }
