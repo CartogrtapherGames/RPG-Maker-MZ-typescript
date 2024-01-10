@@ -177,8 +177,8 @@ declare abstract class Game_Battler extends Game_BattlerBase {
 
   public abstract isSpriteVisible(): boolean;
 
-  public abstract friendsUnit(): Game_Unit;
-  public abstract opponentsUnit(): Game_Unit;
+  public abstract friendsUnit(): Game_Party;
+  public abstract opponentsUnit(): Game_Troop;
 
   public abstract isBattleMember(): boolean;
 

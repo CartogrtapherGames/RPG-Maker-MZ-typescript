@@ -72,6 +72,9 @@ declare class Game_Actor extends Game_Battler {
 
   public isActor(): true;
 
+  public friendsUnit(): Game_Party;
+  public opponentsUnit(): Game_Troop;
+
   public index(): number;
 
   public isBattleMember(): boolean;
