@@ -1,12 +1,21 @@
-declare class Game_Party extends Game_Unit<Game_Actor> {
+declare enum Ability {
+  ENCOUNTER_HALF = 0,
+  ENCOUNTER_NONE = 1,
+  CANCEL_SURPRISE = 2,
+  RAISE_PREEMPTIVE = 3,
+  GOLD_DOUBLE = 4,
+  DROP_ITEM_DOUBLE = 5
+}
+
+declare class Game_Party extends Game_Unit {
   constructor();
 
-  public static readonly ABILITY_ENCOUNTER_HALF: Game_Party.Ability.ENCOUNTER_HALF;
-  public static readonly ABILITY_ENCOUNTER_NONE: Game_Party.Ability.ENCOUNTER_NONE;
-  public static readonly ABILITY_CANCEL_SURPRISE: Game_Party.Ability.CANCEL_SURPRISE;
-  public static readonly ABILITY_RAISE_PREEMPTIVE: Game_Party.Ability.RAISE_PREEMPTIVE;
-  public static readonly ABILITY_GOLD_DOUBLE: Game_Party.Ability.GOLD_DOUBLE;
-  public static readonly ABILITY_DROP_ITEM_DOUBLE: Game_Party.Ability.DROP_ITEM_DOUBLE;
+  public static readonly ABILITY_ENCOUNTER_HALF: Ability.ENCOUNTER_HALF;
+  public static readonly ABILITY_ENCOUNTER_NONE: Ability.ENCOUNTER_NONE;
+  public static readonly ABILITY_CANCEL_SURPRISE: Ability.CANCEL_SURPRISE;
+  public static readonly ABILITY_RAISE_PREEMPTIVE: Ability.RAISE_PREEMPTIVE;
+  public static readonly ABILITY_GOLD_DOUBLE: Ability.GOLD_DOUBLE;
+  public static readonly ABILITY_DROP_ITEM_DOUBLE: Ability.DROP_ITEM_DOUBLE;
 
   public initAllItems(): void;
 
@@ -93,7 +102,7 @@ declare class Game_Party extends Game_Unit<Game_Actor> {
   public charactersForSavefile(): [string, number][];
   public facesForSavefile(): [string, number][];
 
-  public partyAbility(abilityId: Game_Party.Ability): boolean;
+  public partyAbility(abilityId: Ability): boolean;
   public hasEncounterHalf(): boolean;
   public hasEncounterNone(): boolean;
   public hasCancelSurprise(): boolean;

@@ -19,14 +19,13 @@ declare class Game_Message {
     private _scrollMode: boolean;
     private _scrollSpeed: number;
     private _scrollNoFast: boolean;
-    // eslint-disable-next-line @typescript-eslint/ban-types
     private _choiceCallback: Function;
 
     constructor();
 
     public initialize(): void;
     public clear(): void;
-    public choices(): object[]; // Tested all types can think of and only object returns true to instanceof
+    public choices(): object[];
     public speakerName(): string;
     public faceName(): string;
     public faceIndex(): number;

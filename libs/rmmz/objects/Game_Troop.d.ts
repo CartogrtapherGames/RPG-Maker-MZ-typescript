@@ -1,4 +1,4 @@
-declare class Game_Troop extends Game_Unit<Game_Enemy> {
+declare class Game_Troop extends Game_Unit {
 
   public static readonly LETTER_TABLE_HALF: string[];
   public static readonly LETTER_TABLE_FULL: string[];
@@ -12,7 +12,7 @@ declare class Game_Troop extends Game_Unit<Game_Enemy> {
 
   public clear(): void;
 
-  public troop(): RPG.DataTroop;
+  public troop(): DataTroop;
 
   public setup(troopId: number): void;
   public makeUniqueNames(): void;
@@ -30,7 +30,7 @@ declare class Game_Troop extends Game_Unit<Game_Enemy> {
   public goldTotal(): number;
   public goldRate(): number;
 
-  public makeDropItems(): RPG.DataItemBase[];
+  public makeDropItems(): DataItemBase[];
   public isTpbTurnEnd(): boolean;
 
 }
