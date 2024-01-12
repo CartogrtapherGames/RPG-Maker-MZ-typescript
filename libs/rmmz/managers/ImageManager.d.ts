@@ -1,32 +1,50 @@
-declare namespace ImageManager {
+/**
+ * Type representing the structure of a CacheEntry
+ * e.g., { 'img/url.png': Bitmap }
+ */
+declare type CacheEntry = {
+  bitmap: Bitmap
+}
 
-  export let iconWidth: number;
-  export let iconHeight: number;
-  export let faceWidth: number;
-  export let faceHeight: number;
+declare class ImageManager {
 
-  export function loadAnimation(filename: string): Bitmap;
-  export function loadBattleback1(filename: string): Bitmap;
-  export function loadBattleback2(filename: string): Bitmap;
-  export function loadEnemy(filename: string): Bitmap;
-  export function loadCharacter(filename: string): Bitmap;
-  export function loadFace(filename: string): Bitmap;
-  export function loadParallax(filename: string): Bitmap;
-  export function loadPicture(filename: string): Bitmap;
-  export function loadSvActor(filename: string): Bitmap;
-  export function loadSvEnemy(filename: string): Bitmap;
-  export function loadSystem(filename: string): Bitmap;
-  export function loadTileset(filename: string): Bitmap;
-  export function loadTitle1(filename: string): Bitmap;
-  export function loadTitle2(filename: string): Bitmap;
+  iconWidth: number;
+  iconHeight: number;
+  faceWidth: number;
+  faceHeight: number;
 
-  export function loadBitmap(folder: string, filename: string): Bitmap;
-  export function loadBitmapFromUrl(url: string): Bitmap;
-  export function clear(): void;
-  export function isReady(): boolean;
-  export function throwLoadError(bitmap: Bitmap): void;
-  export function isObjectCharacter(filename: string): boolean;
-  export function isBigCharacter(filename: string): boolean;
-  export function isZeroParallax(filename: string): boolean;
+  protected _cache: CacheEntry[]
+
+  /**
+   * The difference between _system and _cache is that _system contains essential images
+   * and _cache contains images used for the current scene.
+   * e.g., { 'img/system/IconSet.png': Bitmap }
+   */
+  protected _system: CacheEntry[]
+  protected _emptyBitmap: Bitmap;
+
+  loadAnimation(filename: string): Bitmap;
+  loadBattleback1(filename: string): Bitmap;
+  loadBattleback2(filename: string): Bitmap;
+  loadEnemy(filename: string): Bitmap;
+  loadCharacter(filename: string): Bitmap;
+  loadFace(filename: string): Bitmap;
+  loadParallax(filename: string): Bitmap;
+  loadPicture(filename: string): Bitmap;
+  loadSvActor(filename: string): Bitmap;
+  loadSvEnemy(filename: string): Bitmap;
+  loadSystem(filename: string): Bitmap;
+  loadTileset(filename: string): Bitmap;
+  loadTitle1(filename: string): Bitmap;
+  loadTitle2(filename: string): Bitmap;
+
+  loadBitmap(folder: string, filename: string): Bitmap;
+  loadBitmapFromUrl(url: string): Bitmap;
+  clear(): void;
+  isReady(): boolean;
+  throwLoadError(bitmap: Bitmap): void;
+  isObjectCharacter(filename: string): boolean;
+  isBigCharacter(filename: string): boolean;
+  isZeroParallax(filename: string): boolean;
 
 }

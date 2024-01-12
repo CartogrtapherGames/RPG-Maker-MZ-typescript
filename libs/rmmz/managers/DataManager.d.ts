@@ -19,69 +19,69 @@ declare interface SavefileContent {
   player/*: Game_Player */; // FIXME
 }
 
-declare namespace DataManager {
+declare class DataManager {
 
-  export function loadGlobalInfo(): void;
-  export function removeInvalidGlobalInfo(): void;
-  export function saveGlobalInfo(): void;
-  export function isGlobalInfoLoaded(): boolean;
+  loadGlobalInfo(): void;
+  removeInvalidGlobalInfo(): void;
+  saveGlobalInfo(): void;
+  isGlobalInfoLoaded(): boolean;
 
-  export function loadDatabase(): void;
-  export function isDatabaseLoaded(): boolean;
+  loadDatabase(): void;
+  isDatabaseLoaded(): boolean;
 
-  export function loadDataFile(name: string, src: string): void;
+  loadDataFile(name: string, src: string): void;
 
-  export function onXhrLoad(xhr: { status: number, responseText: string }, name: string, src: string, url: string): void;
-  export function onXhrError(name: string, src: string, url: string): void;
-  export function onLoad(object: Record<string, unknown>): void;
+  onXhrLoad(xhr: { status: number, responseText: string }, name: string, src: string, url: string): void;
+  onXhrError(name: string, src: string, url: string): void;
+  onLoad(object: Record<string, unknown>): void;
 
-  export function makeEmptyMap(): void;
-  export function loadMapData(mapId: number): void;
-  export function isMapLoaded(): boolean
-  export function isMapObject(object: Record<string, unknown>): boolean;
+  makeEmptyMap(): void;
+  loadMapData(mapId: number): void;
+  isMapLoaded(): boolean
+  isMapObject(object: Record<string, unknown>): boolean;
 
-  export function extractArrayMetadata(array: unknown[]): void;
-  export function extractMetadata(data: Record<string, unknown>): void;
+  extractArrayMetadata(array: unknown[]): void;
+  extractMetadata(data: Record<string, unknown>): void;
 
-  export function checkError(): void;
+  checkError(): void;
 
-  export function setupBattleTest(): void;
-  export function isBattleTest(): boolean;
+  setupBattleTest(): void;
+  isBattleTest(): boolean;
 
-  export function setupEventTest(): void;
-  export function isEventTest(): boolean;
+  setupEventTest(): void;
+  isEventTest(): boolean;
 
-  export function isSkill(item: unknown): item is RPG.DataSkill;
-  export function isItem(item: unknown): item is RPG.DataItem;
-  export function isWeapon(item: unknown): item is RPG.DataWeapon;
-  export function isArmor(item: unknown): item is RPG.DataArmor;
+  isSkill(item: unknown): item is DataSkill;
+  isItem(item: unknown): item is DataItem;
+  isWeapon(item: unknown): item is DataWeapon;
+  isArmor(item: unknown): item is DataArmor;
 
-  export function setupNewGame(): void;
-  export function createGameObjects(): void;
+  setupNewGame(): void;
+  createGameObjects(): void;
 
-  export function isAnySavefileExists(): boolean;
-  export function savefileExists(savefileId: number): boolean;
+  isAnySavefileExists(): boolean;
+  savefileExists(savefileId: number): boolean;
 
-  export function latestSavefileId(): number;
-  export function earliestSavefileId(): number;
-  export function emptySavefileId(): number;
+  latestSavefileId(): number;
+  earliestSavefileId(): number;
+  emptySavefileId(): number;
 
-  export function loadAllSavefileImages(): void;
-  export function loadSavefileImages(info: SavefileInfo): void;
+  loadAllSavefileImages(): void;
+  loadSavefileImages(info: SavefileInfo): void;
 
-  export function maxSavefiles(): number;
+  maxSavefiles(): number;
 
-  export function savefileInfo(savefileId: number): SavefileInfo;
+  savefileInfo(savefileId: number): SavefileInfo;
 
-  export function saveGame(savefileId: number): Promise<number>;
-  export function makeSavename(savefileId: number): string;
-  export function makeSavefileForNewGame(): void;
-  export function makeSavefileInfo(): SavefileInfo;
-  export function makeSaveContents(): SavefileContent;
+  saveGame(savefileId: number): Promise<number>;
+  makeSavename(savefileId: number): string;
+  makeSavefileForNewGame(): void;
+  makeSavefileInfo(): SavefileInfo;
+  makeSaveContents(): SavefileContent;
 
-  export function loadGame(savefileId: number): Promise<number>;
-  export function extractSaveContents(contents: SavefileContent): void;
+  loadGame(savefileId: number): Promise<number>;
+  extractSaveContents(contents: SavefileContent): void;
 
-  export function correctDataErrors(): void;
+  correctDataErrors(): void;
 
 }

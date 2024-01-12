@@ -1,35 +1,35 @@
-declare namespace ColorManager {
+declare class ColorManager {
 
-  export function loadWindowskin(): void;
-  export function textColor(n: number): string;
+  loadWindowskin(): void;
+  textColor(n: number): string;
 
-  export function normalColor(): string;
-  export function systemColor(): string;
-  export function crisisColor(): string;
-  export function deathColor(): string;
-  export function gaugeBackColor(): string;
-  export function hpGaugeColor1(): string;
-  export function hpGaugeColor2(): string;
-  export function mpGaugeColor1(): string;
-  export function mpGaugeColor2(): string;
-  export function mpCostColor(): string;
-  export function powerUpColor(): string;
-  export function powerDownColor(): string;
-  export function ctGaugeColor1(): string;
-  export function ctGaugeColor1(): string;
-  export function tpGaugeColor1(): string;
-  export function tpGaugeColor2(): string;
-  export function tpCostColor(): string;
-  export function pendingColor(): string;
-  export function hpColor(actor: Game_Actor): string;
-  export function mpColor(): string;
-  export function tpColor(): string;
-  export function paramchangeTextColor(change: number): string;
-  export function damageColor(colorType: number): string;
-  export function outlineColor(): string;
-  export function dimColor1(): string;
-  export function dimColor2(): string;
-  export function itemBackColor1(): string;
-  export function itemBackColor2(): string;
+  normalColor(): string;
+  systemColor(): string;
+  crisisColor(): string;
+  deathColor(): string;
+  gaugeBackColor(): string;
+  hpGaugeColor1(): string;
+  hpGaugeColor2(): string;
+  mpGaugeColor1(): string;
+  mpGaugeColor2(): string;
+  mpCostColor(): string;
+  powerUpColor(): string;
+  powerDownColor(): string;
+  ctGaugeColor1(): string;
+  ctGaugeColor1(): string;
+  tpGaugeColor1(): string;
+  tpGaugeColor2(): string;
+  tpCostColor(): string;
+  pendingColor(): string;
+  hpColor(actor: Game_Actor): string;
+  mpColor(): string;
+  tpColor(): string;
+  paramchangeTextColor(change: number): string;
+  damageColor(colorType: number): string;
+  outlineColor(): string;
+  dimColor1(): string;
+  dimColor2(): string;
+  itemBackColor1(): string;
+  itemBackColor2(): string;
 
 }

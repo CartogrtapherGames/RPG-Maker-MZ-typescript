@@ -1,32 +1,38 @@
 type PluginParameters = Record<string, string>;
 
-interface PluginsStruct {
+type PluginsStruct = {
   name: string;
   status: boolean;
   description: string;
   parameters: PluginParameters;
 }
 
-interface PluginCommand {
-  (args: PluginParameters): void;
+type PluginCommand = (args: PluginParameters) => void;
+
+type PluginCommandEntry = {
+  plugin: PluginCommand
 }
 
-declare namespace PluginManager {
+declare class PluginManager {
 
-  export function setup(plugins: PluginsStruct[]): void;
+  protected _scripts: string[];
+  protected _parameters: PluginParameters[];
+  protected _command: PluginCommandEntry[];
 
-  export function parameters(name: string): PluginParameters;
-  export function setParameters(name: string, parameters: string): void;
+  setup(plugins: PluginsStruct[]): void;
 
-  export function loadScript(filename: string): void;
-  export function onError(e: Event): void;
+  parameters(name: string): PluginParameters;
+  setParameters(name: string, parameters: string): void;
 
-  export function makeUrl(filename: string): string;
+  loadScript(filename: string): void;
+  onError(e: Event): void;
 
-  export function checkErrors(): void;
-  export function throwLoadError(url: string): void;
+  makeUrl(filename: string): string;
 
-  export function registerCommand(pluginName: string, commandName: string, func: PluginCommand): void;
-  export function callCommand(self: unknown, pluginName: string, commandName: string, args: PluginParameters): void;
+  checkErrors(): void;
+  throwLoadError(url: string): void;
+
+  registerCommand(pluginName: string, commandName: string, func: PluginCommand): void;
+  callCommand(self: unknown, pluginName: string, commandName: string, args: PluginParameters): void;
 
 }
