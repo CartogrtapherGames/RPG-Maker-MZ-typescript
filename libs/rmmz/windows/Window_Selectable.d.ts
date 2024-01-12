@@ -4,8 +4,7 @@ declare abstract class Window_Selectable extends Window_Scrollable{
   protected _index: number;
   protected _cursorFixed: boolean;
   protected _cursorAll: boolean;
-  protected _helpWindow: Help_Window;
-  //TODO : fix that?
+  protected _helpWindow: Window_Help;
   protected _handlers: Record<string, Function>;
   protected _doubleTouch: boolean;
   protected _canRepeat: boolean;
@@ -45,7 +44,7 @@ declare abstract class Window_Selectable extends Window_Scrollable{
   itemRect(index: number): Rectangle;
   itemRectWithPadding(index: number): Rectangle;
   ItemLineRect(index: number): Rectangle;
-  setHelpWindow(helpWindow: Help_Window);
+  setHelpWindow(helpWindow: Window_Help);
   showHelpWindow();
   hideHelpWindow();
   setHandler(symbol: string,method: Function);
@@ -88,7 +87,7 @@ declare abstract class Window_Selectable extends Window_Scrollable{
   setHelpWindowItem(item);
   isCurrentItemEnabled(): boolean;
   drawAllItems();
-  abstract drawItem();
+  abstract drawItem(index: number);
   clearItem(index: number);
   drawItemBackground(index: number);
   drawBackgroundRect(rect: Rectangle);
@@ -98,5 +97,4 @@ declare abstract class Window_Selectable extends Window_Scrollable{
   override paint();
   refreshCursor();
   refreshCursorForAll();
-
 }
