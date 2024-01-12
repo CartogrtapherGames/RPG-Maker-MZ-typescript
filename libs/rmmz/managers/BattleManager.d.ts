@@ -1,167 +1,192 @@
-declare namespace BattleManager {
+declare enum Result {
+  Victory = 0,
+  Abort = 1,
+  Defeat = 2
+}
 
-  enum Result {
-    Victory = 0,
-    Abort = 1,
-    Defeat = 2
-  }
+declare class BattleManager {
+  protected _phase: String;
+  protected _inputting: boolean;
+  protected _canEscape: boolean;
+  protected _canLose: boolean;
+  protected _battleTest: boolean;
+  protected _eventCallback: (result: Result) => void;
 
-  export function setup(troopId: number, canEscape: boolean, canLose: boolean): void;
-  export function initMembers(): void;
-  export function isTpb(): boolean;
-  export function isActiveTpb(): boolean;
-  export function isBattleTest(): boolean;
+  protected _preemptive: boolean;
+  protected _surprise: boolean;
 
-  export function setBattleTest(battleTest: boolean): void;
-  export function setEventCallback(callback: (result: BattleManager.Result) => void): void;
-  export function setLogWindow(logWindow: Window_BattleLog): void;
-  export function setSpriteset(spriteset: Spriteset_Battle): void;
+  protected _currentActor: Game_Actor;
+  protected _actionForcedBattler: Game_Actor | Game_Enemy | null;
 
-  export function onEncounter(): void;
+  protected _mapBgm: AudioManager.CurrentAudio;
+  protected _mapBgs: AudioManager.CurrentAudio;
 
-  export function ratePreemptive(): number;
-  export function rateSurprise(): number;
+  protected _targets: Array<Game_Battler>;
+  protected _logWindow: Window_BattleLog;
+  protected _spriteset: Spriteset_Battle;
+  protected _escapeRatio: number;
+  protected _escaped: boolean;
+  protected _rewards: Game_Item[];
 
-  export function saveBgmAndBgs(): void;
-  export function playBattleBgm(): void;
-  export function playVictoryMe(): void;
-  export function playDefeatMe(): void;
-  export function replayBgmAndBgs(): void;
+  protected _tpbNeedsPartCommand: boolean;
+  
 
-  export function makeEscapeRatio(): void;
+  setup(troopId: number, canEscape: boolean, canLose: boolean): void;
+  initMembers(): void;
+  isTpb(): boolean;
+  isActiveTpb(): boolean;
+  isBattleTest(): boolean;
 
-  export function update(timeActive: number): void;
+  setBattleTest(battleTest: boolean): void;
+  setEventCallback(callback: (result: Result) => void): void;
+  setLogWindow(logWindow: Window_BattleLog): void;
+  setSpriteset(spriteset: Spriteset_Battle): void;
 
-  export function updatePhase(timeActive: number): void;
-  export function updateEvent(): void;
-  export function updateEventMain(): boolean;
+  onEncounter(): void;
 
-  export function isBusy(): boolean;
+  ratePreemptive(): number;
+  rateSurprise(): number;
 
-  export function updateTpbInput(): void;
+  saveBgmAndBgs(): void;
+  playBattleBgm(): void;
+  playVictoryMe(): void;
+  playDefeatMe(): void;
+  replayBgmAndBgs(): void;
 
-  export function checkTpbInputClose(): void;
-  export function checkTpbInputOpen(): void;
+  makeEscapeRatio(): void;
 
-  export function isPartyTpbInputtable(): boolean;
+  update(timeActive: number): void;
 
-  export function needsActorInputCancel(): boolean;
+  updatePhase(timeActive: number): void;
+  updateEvent(): void;
+  updateEventMain(): boolean;
 
-  export function isTpbMainPhase(): boolean;
-  export function isInputting(): boolean;
-  export function isInTurn(): boolean;
+  isBusy(): boolean;
 
-  export function isTurnEnd(): boolean;
-  export function isAborting(): boolean;
-  export function isBattleEnd(): boolean;
+  updateTpbInput(): void;
 
-  export function canEscape(): boolean;
-  export function canLose(): boolean;
+  checkTpbInputClose(): void;
+  checkTpbInputOpen(): void;
 
-  export function isEscaped(): boolean;
+  isPartyTpbInputtable(): boolean;
 
-  export function actor(): Game_Actor;
+  needsActorInputCancel(): boolean;
 
-  export function startBattle(): void;
+  isTpbMainPhase(): boolean;
+  isInputting(): boolean;
+  isInTurn(): boolean;
 
-  export function displayStartMessages(): void;
+  isTurnEnd(): boolean;
+  isAborting(): boolean;
+  isBattleEnd(): boolean;
 
-  export function startInput(): void;
+  canEscape(): boolean;
+  canLose(): boolean;
 
-  export function inputtingAction(): Game_Action;
+  isEscaped(): boolean;
 
-  export function selectNextCommand(): void;
+  actor(): Game_Actor;
 
-  export function selectNextActor(): void;
-  export function selectPreviousCommand(): void;
-  export function selectPreviousActor(): void;
+  startBattle(): void;
 
-  export function changeCurrentActor(forward: boolean): void;
+  displayStartMessages(): void;
 
-  export function startActorInput(): void;
+  startInput(): void;
 
-  export function finishActorInput(): void;
-  export function cancelActorInput(): void;
+  inputtingAction(): Game_Action;
 
-  export function updateStart(): void;
+  selectNextCommand(): void;
 
-  export function startTurn(): void;
+  selectNextActor(): void;
+  selectPreviousCommand(): void;
+  selectPreviousActor(): void;
 
-  export function updateTurn(timeActive: boolean): void;
-  export function updateTpb(): void;
-  export function updateAllTpbBattlers(): void;
-  export function updateTpbBattler(battler): void;
+  changeCurrentActor(forward: boolean): void;
 
-  export function checkTpbTurnEnd(): void;
+  startActorInput(): void;
 
-  export function processTurn(): void;
+  finishActorInput(): void;
+  cancelActorInput(): void;
 
-  export function endBattlerActions(battler): void;
+  updateStart(): void;
 
-  export function endTurn(): void;
+  startTurn(): void;
 
-  export function endAllBattlersTurn(): void;
+  updateTurn(timeActive: boolean): void;
+  updateTpb(): void;
+  updateAllTpbBattlers(): void;
+  updateTpbBattler(battler): void;
 
-  export function displayBattlerStatus(battler: Game_Battler, current: boolean): void;
+  checkTpbTurnEnd(): void;
 
-  export function updateTurnEnd(): void;
+  processTurn(): void;
 
-  export function getNextSubject(): Game_Battler | null;
+  endBattlerActions(battler): void;
 
-  export function allBattleMembers(): Game_Battler[];
+  endTurn(): void;
 
-  export function makeActionOrders(): void;
+  endAllBattlersTurn(): void;
 
-  export function startAction(): void;
-  export function updateAction(): void;
-  export function endAction(): void;
+  displayBattlerStatus(battler: Game_Battler, current: boolean): void;
 
-  export function invokeAction(subject: Game_Battler, target: Game_Battler): void;
-  export function invokeNormalAction(subject: Game_Battler, target: Game_Battler): void;
-  export function invokeCounterAttack(subject: Game_Battler, target: Game_Battler): void;
-  export function invokeMagicReflection(subject: Game_Battler, target: Game_Battler): void;
+  updateTurnEnd(): void;
 
-  export function applySubstitute(target: Game_Battler): Game_Battler;
-  export function checkSubstitute(target: Game_Battler): boolean;
+  getNextSubject(): Game_Battler | null;
 
-  export function isActionForced(): boolean;
+  allBattleMembers(): Game_Battler[];
 
-  export function forceAction(battler: Game_Battler): void;
+  makeActionOrders(): void;
 
-  export function processForcedAction(): void;
+  startAction(): void;
+  updateAction(): void;
+  endAction(): void;
 
-  export function abort(): void;
+  invokeAction(subject: Game_Battler, target: Game_Battler): void;
+  invokeNormalAction(subject: Game_Battler, target: Game_Battler): void;
+  invokeCounterAttack(subject: Game_Battler, target: Game_Battler): void;
+  invokeMagicReflection(subject: Game_Battler, target: Game_Battler): void;
 
-  export function checkBattleEnd(): boolean;
-  export function checkAbort(): boolean;
+  applySubstitute(target: Game_Battler): Game_Battler;
+  checkSubstitute(target: Game_Battler): boolean;
 
-  export function processVictory(): void;
-  export function processEscape(): boolean;
+  isActionForced(): boolean;
 
-  export function onEscapeSuccess(): void;
-  export function onEscapeFailure(): void;
+  forceAction(battler: Game_Battler): void;
 
-  export function processAbort(): void;
-  export function processDefeat(): void;
+  processForcedAction(): void;
 
-  export function endBattle(result: BattleManager.Result): void;
+  abort(): void;
 
-  export function updateBattleEnd(): void;
+  checkBattleEnd(): boolean;
+  checkAbort(): boolean;
 
-  export function makeRewards(): void;
+  processVictory(): void;
+  processEscape(): boolean;
 
-  export function displayVictoryMessage(): void;
-  export function displayDefeatMessage(): void;
-  export function displayEscapeSuccessMessage(): void;
-  export function displayEscapeFailureMessage();
-  export function displayRewards(): void;
-  export function displayExp(): void;
-  export function displayGold(): void;
-  export function displayDropItems(): void;
+  onEscapeSuccess(): void;
+  onEscapeFailure(): void;
 
-  export function gainRewards(): void;
-  export function gainExp(): void;
-  export function gainGold(): void;
-  export function gainDropItems(): void;
+  processAbort(): void;
+  processDefeat(): void;
+
+  endBattle(result: Result): void;
+
+  updateBattleEnd(): void;
+
+  makeRewards(): void;
+
+  displayVictoryMessage(): void;
+  displayDefeatMessage(): void;
+  displayEscapeSuccessMessage(): void;
+  displayEscapeFailureMessage();
+  displayRewards(): void;
+  displayExp(): void;
+  displayGold(): void;
+  displayDropItems(): void;
+
+  gainRewards(): void;
+  gainExp(): void;
+  gainGold(): void;
+  gainDropItems(): void;
 
 }
