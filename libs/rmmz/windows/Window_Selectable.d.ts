@@ -87,11 +87,11 @@ declare abstract class Window_Selectable extends Window_Scrollable{
   setHelpWindowItem(item);
   isCurrentItemEnabled(): boolean;
   drawAllItems();
-  abstract drawItem(index: number);
+  abstract drawItem(index: number,  ...args);
   clearItem(index: number);
   drawItemBackground(index: number);
   drawBackgroundRect(rect: Rectangle);
-  redrawItem(index: number);
+  redrawItem(index: number,);
   redrawCurrentItem();
   refresh();
   override paint();
