@@ -8,13 +8,13 @@ declare class Sprite_StateIcon extends Sprite{
   protected _animationIndex: number;
 
   constructor();
-  initialize();
-  initMembers();
-  loadBitmap();
-  setup(battler:Game_Battler);
-  override update();
+  initialize(): void;
+  initMembers(): void;
+  loadBitmap(): void;
+  setup(battler:Game_Battler): void;
+  override update(): void;
   animationWait(): number;
-  updateIcon();
+  updateIcon(): void;
   shouldDisplay(): boolean;
-  updateFrame();
+  updateFrame(): void;
 }

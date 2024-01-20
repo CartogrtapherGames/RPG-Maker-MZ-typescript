@@ -6,7 +6,7 @@ declare abstract class Sprite_Clickable extends Sprite {
 
     constructor();
 
-    public initialize(): void;
+    public initialize(...args: any[]): void;
 
     public update(): void;
     public processTouch(): void;

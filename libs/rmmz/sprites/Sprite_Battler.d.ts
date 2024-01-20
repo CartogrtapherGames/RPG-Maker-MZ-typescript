@@ -13,7 +13,7 @@ declare class Sprite_Battler extends Sprite_Clickable {
     protected _selectionEffectCount: number;
 
     constructor(battler: Game_Battler);
-
+    initialize(battler: Game_Battler): void;
     public initMembers(): void;
 
     public setBattler(battler: Game_Battler): void;

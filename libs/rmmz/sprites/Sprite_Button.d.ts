@@ -1,5 +1,4 @@
 
-
 declare interface ButtonTable {
     cancel: { x: 0, w: 2 },
     pageup: { x: 2, w: 1 },

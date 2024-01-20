@@ -6,13 +6,13 @@ declare class Sprite_Weapon extends Sprite {
   protected _pattern: number;
 
   constructor();
-  initialize();
-  initMembers();
-  setup(weaponImageId: number);
-  override update();
+  initialize(): void;
+  initMembers(): void;
+  setup(weaponImageId: number): void;
+  override update(): void;
   animationWait(): number;
-  updatePattern();
-  loadBitmap();
-  updateFrame();
+  updatePattern(): void;
+  loadBitmap(): void;
+  updateFrame(): void;
   isPlaying(): boolean;
 }

@@ -13,11 +13,11 @@ declare class Sprite_Gauge extends Sprite {
   protected _flashingCount: number;
 
   constructor();
-  initialize();
-  initMembers();
-  override destroy(options?: { children?: boolean; texture?: boolean; baseTexture?: boolean });
-  createBitmap();
-  bitmapWidth();
+  initialize(): void;
+  initMembers(): void;
+  override destroy(options?: { children?: boolean; texture?: boolean; baseTexture?: boolean }): void;
+  createBitmap(): void;
+  bitmapWidth(): void;
   bitmapWidth(): number;
   bitmapHeight(): number;
   textHeight(): number;
@@ -27,13 +27,13 @@ declare class Sprite_Gauge extends Sprite {
   labelFontFace(): string;
   labelFontsSize(): number;
   valueFontSize(): number;
-  setup(battler: Game_Battler,statusType: string);
-  override update();
-  updateBitmap();
-  updateTargetValue(value: number,maxValue: number);
+  setup(battler: Game_Battler,statusType: string): void;
+  override update(): void;
+  updateBitmap(): void;
+  updateTargetValue(value: number,maxValue: number): void;
   smoothness(): number;
-  updateGaugeAnimation();
-  updateFlashing();
+  updateGaugeAnimation(): void;
+  updateFlashing(): void;
   flashingColor1(): number[];
   flashingColor2(): number[];
   isValid(): boolean;
@@ -49,13 +49,13 @@ declare class Sprite_Gauge extends Sprite {
   valueColor():string;
   valueOutlineColor(): string;
   valueOutlineWidth(): string;
-  redraw();
-  drawGauge();
-  drawGaugeRect(x: number,y: number, width: number,height: number);
+  redraw(): void;
+  drawGauge(): void;
+  drawGaugeRect(x: number,y: number, width: number,height: number): void;
   gaugeRate(): number;
-  drawLabel();
+  drawLabel(): void;
   measureLabelWidth(): number;
   labelOpacity(): number;
-  drawValue();
-  setupValueFont();
+  drawValue(): void;
+  setupValueFont(): void;
 }

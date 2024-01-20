@@ -4,15 +4,15 @@ declare class Sprite_Timer extends Sprite {
   protected _seconds: number;
 
   constructor();
-  initialize();
-  override destroy(options?: { children?: boolean; texture?: boolean; baseTexture?: boolean });
-  createBitmap();
+  initialize(): void;
+  override destroy(options?: { children?: boolean; texture?: boolean; baseTexture?: boolean }): void;
+  createBitmap(): void;
   fontFace(): string;
-  fontSize();
-  override update();
-  updateBitmap();
-  redraw();
+  fontSize(): void;
+  override update(): void;
+  updateBitmap(): void;
+  redraw(): void;
   timerText(): number;
-  updatePosition();
-  override updateVisibility();
+  updatePosition(): void;
+  override updateVisibility(): void;
 }

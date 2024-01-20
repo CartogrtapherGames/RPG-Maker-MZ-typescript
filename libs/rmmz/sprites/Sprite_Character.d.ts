@@ -12,31 +12,31 @@ declare class Sprite_Character extends Sprite {
     protected _characterIndex: number;
 
     constructor(character: Game_CharacterBase);
-    initialize(character: Game_CharacterBase);
-    initMembers();
-    setCharacter(character: Game_CharacterBase);
-    checkCharacter(character: Game_CharacterBase);
-    override update();
-    override updateVisibility();
+    initialize(character: Game_CharacterBase): void;
+    initMembers(): void;
+    setCharacter(character: Game_CharacterBase): void;
+    checkCharacter(character: Game_CharacterBase): void;
+    override update(): void;
+    override updateVisibility(): void;
     isTile(): boolean;
     isObjectCharacter(): boolean;
     isEmptyCharacter(): boolean;
     tilesetBitmap(tileId: number): Bitmap;
-    updateBitmap();
+    updateBitmap(): void;
     isImageChanged(): boolean;
-    setTileBitmap();
-    setCharacterBitmap();
-    updateFrame();
-    updateTileFrame();
-    updateCharacterFrame();
+    setTileBitmap(): void;
+    setCharacterBitmap(): void;
+    updateFrame(): void;
+    updateTileFrame(): void;
+    updateCharacterFrame(): void;
     characterBlockX(): number;
     characterBlockY(): number;
     characterPatternX(): number
     characterPatternY(): number;
     patternWidth(): number;
     patternHeight(): number;
-    updateHalfBodySprites();
-    createHalfBodySprites();
-    updatePosition();
-    updateOther();
+    updateHalfBodySprites(): void;
+    createHalfBodySprites(): void;
+    updatePosition(): void;
+    updateOther(): void;
 }

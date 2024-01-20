@@ -6,12 +6,12 @@ declare class Sprite_StateOverlay extends Sprite{
   protected _pattern: number;
 
   constructor();
-  initialize();
-  initMembers();
-  loadBitmap();
-  setup(battler: Game_Battler);
-  override update();
+  initialize(): void;
+  initMembers(): void;
+  loadBitmap(): void;
+  setup(battler: Game_Battler): void;
+  override update(): void;
   animationWait(): number;
-  updatePattern();
-  updateFrame();
+  updatePattern(): void;
+  updateFrame(): void;
 }

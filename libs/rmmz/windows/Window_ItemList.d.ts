@@ -3,11 +3,11 @@
 declare class Window_ItemList extends Window_Selectable {
 
   protected _category: string;
-  protected _data: DataItem[]; // TODO : is it really how it works?
+  protected _data: DataItem[];
 
   constructor(rect: Rectangle);
-  override initialize(rect: Rectangle);
-  setCategory(category: string);
+  override initialize(rect: Rectangle): void;
+  setCategory(category: string): void;
   override maxCols(): number;
   override colSpacing(): number;
   override maxItems(): number;
@@ -17,11 +17,11 @@ declare class Window_ItemList extends Window_Selectable {
   includes(item: DataItem): boolean;
   needsNumber(): boolean;
   isEnabled(item: DataItem): boolean;
-  makeItemList();
-  selectLast();
-  override drawItem(index: number);
+  makeItemList(): void;
+  selectLast(): void;
+  override drawItem(index: number): void;
   numberWidth(): number;
-  drawItemNumber(item: DataItem,x: number,y: number, width: number);
-  updateHelp();
-  override refresh();
+  drawItemNumber(item: DataItem,x: number,y: number, width: number): void;
+  updateHelp(): void;
+  override refresh(): void;
 }

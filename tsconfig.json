@@ -11,7 +11,8 @@
     "skipLibCheck": false,
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "allowJs": true
   },
-  "include": ["./libs/**/*.ts"]
+  "include": ["./libs/**/*.ts", "./js/**/*.js"]
 }

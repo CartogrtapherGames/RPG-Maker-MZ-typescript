@@ -6,13 +6,13 @@ declare class Sprite_Balloon extends Sprite {
   protected _duration: number;
 
   constructor();
-  initialize();
-  initMembers();
-  loadBitmap();
-  setup(targetSprite: Sprite_Character, balloonId: number);
-  override update();
-  updatePosition();
-  updateFrame();
+  initialize(): void;
+  initMembers(): void;
+  loadBitmap(): void;
+  setup(targetSprite: Sprite_Character, balloonId: number): void;
+  override update(): void;
+  updatePosition(): void;
+  updateFrame(): void;
   speed(): number;
   waitTime(): number;
   frameIndex(): number;

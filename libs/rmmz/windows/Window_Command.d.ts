@@ -10,12 +10,12 @@ declare abstract class Window_Command extends Window_Selectable {
   protected _list: CommandStruct[];
 
   constructor(rect: Rectangle);
-  override initialize(rect: Rectangle);
+  override initialize(rect: Rectangle): void;
 
   override maxItems(): number;
-  clearCommandList();
-  abstract makeCommandList();
-  addCommand(name: string,symbol: string, enable?: boolean,ext?: boolean);
+  clearCommandList(): void;
+  abstract makeCommandList(): void;
+  addCommand(name: string,symbol: string, enable?: boolean,ext?: boolean): void;
   commandName(index: number): string;
   commandSymbol(index: number): string;
   isCommandEnabled(index: number): boolean;
@@ -24,12 +24,12 @@ declare abstract class Window_Command extends Window_Selectable {
   currentSymbol(): string;
   currentExt(): Function;
   findSymbol(symbol: string): number;
-  selectSymbol(symbol: string);
+  selectSymbol(symbol: string): void;
   findExt(ext: Function): Function;
-  selecExt(ext: Function);
-  override drawItem(index: number);
+  selecExt(ext: Function): void;
+  override drawItem(index: number): void;
   itemTextAlign(): string;
   override isOkEnabled(): boolean;
-  override callOkHandler();
-  override refresh();
+  override callOkHandler(): void;
+  override refresh(): void;
 }

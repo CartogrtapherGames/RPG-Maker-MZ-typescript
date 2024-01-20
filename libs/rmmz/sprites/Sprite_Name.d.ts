@@ -7,21 +7,21 @@ declare class Sprite_Name extends Sprite {
   protected _textColor: string;
 
   constructor();
-  initialize();
-  initMembers();
-  override destroy(options?: { children?: boolean; texture?: boolean; baseTexture?: boolean });
-  createBitmap();
+  initialize(): void;
+  initMembers(): void;
+  override destroy(options?: { children?: boolean; texture?: boolean; baseTexture?: boolean }): void;
+  createBitmap(): void;
   bitmapWidth(): number;
   bitmapHeight(): number;
   fontFace(): string;
   fontSize(): number;
-  setup(battler:Game_Battler);
-  override update();
-  updateBitmap();
+  setup(battler:Game_Battler): void;
+  override update(): void;
+  updateBitmap(): void;
   name(): string;
   textColor(): string;
   outlineColor(): string;
   outlineWidth(): number;
-  redraw();
-  setupFont();
+  redraw(): void;
+  setupFont(): void;
 }

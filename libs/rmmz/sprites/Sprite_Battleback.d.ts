@@ -3,8 +3,8 @@
 declare class Sprite_Battleback extends TilingSprite {
 
   constructor(type: number);
-  initialize(type: number);
-  adjustPosition();
+  initialize(type: number) : void;
+  adjustPosition(): void;
   battleback1Bitmap(): Bitmap;
   battleback2Bitmap(): Bitmap;
   battleback1Name(): string;
