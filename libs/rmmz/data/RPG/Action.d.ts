@@ -1,4 +1,4 @@
-namespace RPG {
+declare namespace RPG {
   export interface Action {
     conditionParam1: number;
     conditionParam2: number;

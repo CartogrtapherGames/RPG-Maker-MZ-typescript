@@ -73,7 +73,7 @@ declare class Game_Action {
     public isValid(): boolean;
     public speed(): number;
     public makeTargets(): number[];
-    public repeatTargets(targets): number[];
+    public repeatTargets(targets: Game_Battler[]): number[];
     public confusionTarget(): boolean;
     public targetsForEveryone(): Game_Battler[];
     public targetsForOpponents(): Game_Battler[];

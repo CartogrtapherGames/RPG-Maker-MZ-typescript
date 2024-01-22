@@ -10,55 +10,57 @@ declare abstract class Scene_Base extends Stage {
     protected _windowLayer: WindowLayer;
     protected _colorFilter: ColorFilter;
 
-    protected constructor();
+    constructor();
+
+    initialize(): void;
 
     /**
      * the create method of the scene.
      */
-    public abstract create(): void;
+     abstract create(): void;
 
-    public isActive(): boolean;
+     isActive(): boolean;
 
-    public isReady(): boolean;
+     isReady(): boolean;
 
-    public start(): void;
+     start(): void;
 
-    public update(): void;
+     update(): void;
 
-    public stop(): void;
+     stop(): void;
 
-    public isStarted(): boolean;
+     isStarted(): boolean;
 
-    public isBusy(): boolean;
+     isBusy(): boolean;
 
-    public isFading(): boolean;
+     isFading(): boolean;
 
-    public terminate(): void;
+     terminate(): void;
 
-    public createWindowLayer(): void;
+     createWindowLayer(): void;
 
-    public addWindow(window: Window): void;
+     addWindow(window: Window): void;
 
     /**
      *
      * @param {number} duration the duration
      * @param {boolean} white whether the fadein should be white or not.
      */
-    public startFadeIn(duration: number, white?: boolean): void;
+     startFadeIn(duration: number, white?: boolean): void;
 
-    public startFadeOut(duration: number, white?: boolean): void;
+     startFadeOut(duration: number, white?: boolean): void;
 
-    public createColorFilter(): void;
+     createColorFilter(): void;
 
-    public updateColorFilter(): void;
+     updateColorFilter(): void;
 
-    public updateFade(): void;
+     updateFade(): void;
 
-    public updateChildren(): void;
+     updateChildren(): void;
 
-    public popScene(): void;
+     popScene(): void;
 
-    public checkGameover(): void;
+     checkGameover(): void;
 
     public fadeOutAll(): void;
 
@@ -76,27 +78,27 @@ declare abstract class Scene_Base extends Stage {
 
     public isRightInputMode(): boolean;
 
-    public mainCommandWidth(): number;
+     mainCommandWidth(): number;
 
-    public buttonAreaTop(): number;
+     buttonAreaTop(): number;
 
-    public buttonAreaBottom(): number;
+     buttonAreaBottom(): number;
 
-    public buttonAreaHeight(): number;
+     buttonAreaHeight(): number;
 
-    public buttonY(): number;
+     buttonY(): number;
 
-    public calcWindowHeight(numLines: number, selectable: boolean): number;
+     calcWindowHeight(numLines: number, selectable: boolean): number;
 
-    public requestAutosave(): void;
+     requestAutosave(): void;
 
-    public isAutosaveEnabled(): boolean;
+     isAutosaveEnabled(): boolean;
 
-    public executeAutosave(): void;
+     executeAutosave(): void;
 
-    public onAutosaveSucess(): void;
+     onAutosaveSucess(): void;
 
-    public onAutosaveFailure(): void;
+     onAutosaveFailure(): void;
 }
 
 

@@ -2,42 +2,40 @@
 
 
 declare class Scene_Title extends Scene_Base {
-
-    // TODO : maybe change that?
-    protected _commandWindow: Window_TitleCommand<any>
+    protected _commandWindow: Window_TitleCommand;
     protected _gameTitleSprite: Sprite;
     protected _backSprite1: Sprite;
     protected _backSprite2: Sprite;
 
     constructor();
 
-    public initialize(): void;
+     initialize(): void;
 
-    public create(): void;
+     create(): void;
 
-    public start(): void;
+     start(): void;
 
-    public update(): void;
+     update(): void;
 
-    public isBusy(): boolean;
+     isBusy(): boolean;
 
-    public createBackground(): void;
+     createBackground(): void;
 
-    public createForeground(): void;
+     createForeground(): void;
 
-    public drawGameTitle(): void;
+     drawGameTitle(): void;
 
-    public adjustBackground(): void;
+     adjustBackground(): void;
 
-    public createCommandWindw(): void;
+     createCommandWindow(): void;
 
-    public commandWindowRect(): Rectangle;
+     commandWindowRect(): Rectangle;
 
-    public commandNewGame(): void;
+     commandNewGame(): void;
 
-    public commandContinue(): void;
+     commandContinue(): void;
 
-    public commandOptions(): void;
+     commandOptions(): void;
 
-    public playTitleMusic(): void;
+     playTitleMusic(): void;
 }

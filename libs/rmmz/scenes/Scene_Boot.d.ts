@@ -7,36 +7,36 @@ declare class Scene_Boot extends Scene_Base {
 
     constructor();
 
-    public initialize(): void;
+     initialize(): void;
 
     override create(): void;
 
     override isReady(): boolean;
 
-    public onDatabaseLoaded(): void;
+     onDatabaseLoaded(): void;
 
-    public setEncryptionInfo(): void;
+     setEncryptionInfo(): void;
 
-    public loadSystemImages(): void;
+     loadSystemImages(): void;
 
-    public loadPlayerData(): void;
+     loadPlayerData(): void;
 
-    public loadGameFonts(): void;
+     loadGameFonts(): void;
 
-    public isPlayerDataLoaded(): void;
+     isPlayerDataLoaded(): void;
 
     override start(): void;
 
-    public startNormalGame(): void;
+     startNormalGame(): void;
 
-    public resizeScreen(): void;
+     resizeScreen(): void;
 
-    public adjustBoxSize(): void;
+     adjustBoxSize(): void;
 
-    public adjustWindow(): void;
+     adjustWindow(): void;
 
-    public updateDocumentTitle(): void;
+     updateDocumentTitle(): void;
 
-    public checkPlayerLocation(): void;
+     checkPlayerLocation(): void;
 }
 
