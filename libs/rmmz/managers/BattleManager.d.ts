@@ -18,8 +18,8 @@ declare class BattleManager {
   protected static _currentActor: Game_Actor;
   protected static _actionForcedBattler: Game_Actor | Game_Enemy | null;
 
-  protected static _mapBgm: AudioManager.CurrentAudio;
-  protected static _mapBgs: AudioManager.CurrentAudio;
+  protected static _mapBgm: CurrentAudio;
+  protected static _mapBgs: CurrentAudio;
 
   protected static _targets: Array<Game_Battler>;
   protected static _logWindow: Window_BattleLog;
