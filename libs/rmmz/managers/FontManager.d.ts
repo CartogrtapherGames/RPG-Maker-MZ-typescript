@@ -21,13 +21,13 @@ type FontState = {
 };
 
 declare class FontManager {
-  protected _urls: FontUrl[];
-  protected _states: FontState[];
+  protected static _urls: FontUrl[];
+  protected static _states: FontState[];
 
-  load(family: string, filename: string): void;
-  isReady(): boolean;
-  startLoading(family: string, url: string): void;
-  throwLoadError(familly: string): void;
-  makeUrl(filename: string): string;
+  static load(family: string, filename: string): void;
+  static isReady(): boolean;
+  static startLoading(family: string, url: string): void;
+  static throwLoadError(familly: string): void;
+  static makeUrl(filename: string): string;
 
 }

@@ -1,77 +1,77 @@
-declare namespace AudioManager {
+declare interface CurrentAudio {
+  name: string;
+  volume: number;
+  pitch: number;
+  pan?: number;
+  pos?: number;
+}
 
-  interface CurrentAudio {
-    name: string;
-    volume: number;
-    pitch: number;
-    pan?: number;
-    pos?: number;
-  }
+declare class AudioManager {
 
-  export let bgmVolume: number;
-  export let bgsVolume: number;
-  export let meVolume: number;
-  export let seVolume: number;
+  static bgmVolume: number;
+  static bgsVolume: number;
+  static meVolume: number;
+  static seVolume: number;
 
-  export function playBgm(bgm: CurrentAudio, pos: number): void;
-  export function replayBgm(bgm: CurrentAudio): void;
+  static playBgm(bgm: CurrentAudio, pos: number): void;
+  static replayBgm(bgm: CurrentAudio): void;
 
-  export function isCurrentBgm(bgm: CurrentAudio): boolean;
+  static isCurrentBgm(bgm: CurrentAudio): boolean;
 
-  export function updateBgmParameters(bgm: CurrentAudio): void;
-  export function updateCurrentBgm(bgm: CurrentAudio, pos: number): void;
+  static updateBgmParameters(bgm: CurrentAudio): void;
+  static updateCurrentBgm(bgm: CurrentAudio, pos: number): void;
 
-  export function stopBgm(): void;
+  static stopBgm(): void;
 
-  export function fadeOutBgm(duration: number): void;
-  export function fadeInBgm(duration: number): void;
+  static fadeOutBgm(duration: number): void;
+  static fadeInBgm(duration: number): void;
 
-  export function playBgs(bgs: CurrentAudio, pos: number): void;
-  export function replayBgs(bgs: CurrentAudio): void;
+  static playBgs(bgs: CurrentAudio, pos: number): void;
+  static replayBgs(bgs: CurrentAudio): void;
 
-  export function isCurrentBgs(bgs: CurrentAudio): boolean;
+  static isCurrentBgs(bgs: CurrentAudio): boolean;
 
-  export function updateBgsParameters(bgs: CurrentAudio): void;
+  static updateBgsParameters(bgs: CurrentAudio): void;
 
-  export function stopBgs(): void;
+  static stopBgs(): void;
 
-  export function fadeOutBgs(duration: number): void;
-  export function fadeInBgs(duration: number): void;
+  static fadeOutBgs(duration: number): void;
+  static fadeInBgs(duration: number): void;
 
-  export function playMe(me: CurrentAudio): void;
+  static playMe(me: CurrentAudio): void;
 
-  export function updateMeParameters(me: CurrentAudio): void;
+  static updateMeParameters(me: CurrentAudio): void;
 
-  export function fadeOutMe(duration: number): void;
+  static fadeOutMe(duration: number): void;
 
-  export function stopMe(): void;
+  static stopMe(): void;
 
-  export function playSe(se: CurrentAudio): void;
+  static playSe(se: CurrentAudio): void;
 
-  export function updateSeParameters(buffer: WebAudio, se: CurrentAudio): void;
+  static updateSeParameters(buffer: WebAudio, se: CurrentAudio): void;
 
-  export function cleanupSe(): void;
+  static cleanupSe(): void;
 
-  export function stopSe(): void;
+  static stopSe(): void;
 
-  export function playStaticSe(se: CurrentAudio): void;
-  export function loadStaticSe(se: CurrentAudio): void;
+  static playStaticSe(se: CurrentAudio): void;
+  static loadStaticSe(se: CurrentAudio): void;
 
-  export function isStaticSe(se: CurrentAudio): boolean;
+  static isStaticSe(se: CurrentAudio): boolean;
 
-  export function stopAll(): void;
+  static stopAll(): void;
 
-  export function saveBgm(): CurrentAudio;
-  export function saveBgs(): CurrentAudio;
+  static saveBgm(): CurrentAudio;
+  static saveBgs(): CurrentAudio;
 
-  export function makeEmptyAudioObject(): CurrentAudio;
+  static makeEmptyAudioObject(): CurrentAudio;
 
-  export function createBuffer(folder: string, name: string): WebAudio;
-  export function updateBufferParameters(buffer: WebAudio, configVolume: number, audio: CurrentAudio): void;
+  static createBuffer(folder: string, name: string): WebAudio;
+  static updateBufferParameters(buffer: WebAudio, configVolume: number, audio: CurrentAudio): void;
 
-  export function audioFileExt(): string;
+  static audioFileExt(): string;
 
-  export function checkErrors(): void;
-  export function throwLoadError(webAudio: WebAudio): void;
+  static checkErrors(): void;
+  static throwLoadError(webAudio: WebAudio): void;
 
 }

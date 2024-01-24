@@ -15,24 +15,24 @@ type PluginCommandEntry = {
 
 declare class PluginManager {
 
-  protected _scripts: string[];
-  protected _parameters: PluginParameters[];
-  protected _command: PluginCommandEntry[];
+  protected static _scripts: string[];
+  protected static _parameters: PluginParameters[];
+  protected static _command: PluginCommandEntry[];
 
-  setup(plugins: PluginsStruct[]): void;
+  static setup(plugins: PluginsStruct[]): void;
 
-  parameters(name: string): PluginParameters;
-  setParameters(name: string, parameters: string): void;
+  static parameters(name: string): PluginParameters;
+  static setParameters(name: string, parameters: string): void;
 
-  loadScript(filename: string): void;
-  onError(e: Event): void;
+  static loadScript(filename: string): void;
+  static onError(e: Event): void;
 
-  makeUrl(filename: string): string;
+  static makeUrl(filename: string): string;
 
-  checkErrors(): void;
-  throwLoadError(url: string): void;
+  static checkErrors(): void;
+  static throwLoadError(url: string): void;
 
-  registerCommand(pluginName: string, commandName: string, func: PluginCommand): void;
-  callCommand(self: unknown, pluginName: string, commandName: string, args: PluginParameters): void;
+  static registerCommand(pluginName: string, commandName: string, func: PluginCommand): void;
+  static callCommand(self: unknown, pluginName: string, commandName: string, args: PluginParameters): void;
 
 }

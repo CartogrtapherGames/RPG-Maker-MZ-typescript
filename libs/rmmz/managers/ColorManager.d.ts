@@ -1,35 +1,35 @@
 declare class ColorManager {
 
-  loadWindowskin(): void;
-  textColor(n: number): string;
+  static loadWindowskin(): void;
+  static textColor(n: number): string;
 
-  normalColor(): string;
-  systemColor(): string;
-  crisisColor(): string;
-  deathColor(): string;
-  gaugeBackColor(): string;
-  hpGaugeColor1(): string;
-  hpGaugeColor2(): string;
-  mpGaugeColor1(): string;
-  mpGaugeColor2(): string;
-  mpCostColor(): string;
-  powerUpColor(): string;
-  powerDownColor(): string;
-  ctGaugeColor1(): string;
-  ctGaugeColor1(): string;
-  tpGaugeColor1(): string;
-  tpGaugeColor2(): string;
-  tpCostColor(): string;
-  pendingColor(): string;
-  hpColor(actor: Game_Actor): string;
-  mpColor(): string;
-  tpColor(): string;
-  paramchangeTextColor(change: number): string;
-  damageColor(colorType: number): string;
-  outlineColor(): string;
-  dimColor1(): string;
-  dimColor2(): string;
-  itemBackColor1(): string;
-  itemBackColor2(): string;
+  static normalColor(): string;
+  static systemColor(): string;
+  static crisisColor(): string;
+  static deathColor(): string;
+  static gaugeBackColor(): string;
+  static hpGaugeColor1(): string;
+  static hpGaugeColor2(): string;
+  static mpGaugeColor1(): string;
+  static mpGaugeColor2(): string;
+  static mpCostColor(): string;
+  static powerUpColor(): string;
+  static powerDownColor(): string;
+  static ctGaugeColor1(): string;
+  static ctGaugeColor1(): string;
+  static tpGaugeColor1(): string;
+  static tpGaugeColor2(): string;
+  static tpCostColor(): string;
+  static pendingColor(): string;
+  static hpColor(actor: Game_Actor): string;
+  static mpColor(): string;
+  static tpColor(): string;
+  static paramchangeTextColor(change: number): string;
+  static damageColor(colorType: number): string;
+  static outlineColor(): string;
+  static dimColor1(): string;
+  static dimColor2(): string;
+  static itemBackColor1(): string;
+  static itemBackColor2(): string;
 
 }

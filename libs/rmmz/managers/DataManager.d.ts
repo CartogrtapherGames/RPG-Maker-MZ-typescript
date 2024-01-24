@@ -21,67 +21,67 @@ declare interface SavefileContent {
 
 declare class DataManager {
 
-  loadGlobalInfo(): void;
-  removeInvalidGlobalInfo(): void;
-  saveGlobalInfo(): void;
-  isGlobalInfoLoaded(): boolean;
+  static loadGlobalInfo(): void;
+  static removeInvalidGlobalInfo(): void;
+  static saveGlobalInfo(): void;
+  static isGlobalInfoLoaded(): boolean;
 
-  loadDatabase(): void;
-  isDatabaseLoaded(): boolean;
+  static loadDatabase(): void;
+  static isDatabaseLoaded(): boolean;
 
-  loadDataFile(name: string, src: string): void;
+  static loadDataFile(name: string, src: string): void;
 
-  onXhrLoad(xhr: { status: number, responseText: string }, name: string, src: string, url: string): void;
-  onXhrError(name: string, src: string, url: string): void;
-  onLoad(object: Record<string, unknown>): void;
+  static onXhrLoad(xhr: { status: number, responseText: string }, name: string, src: string, url: string): void;
+  static onXhrError(name: string, src: string, url: string): void;
+  static onLoad(object: Record<string, unknown>): void;
 
-  makeEmptyMap(): void;
-  loadMapData(mapId: number): void;
-  isMapLoaded(): boolean
-  isMapObject(object: Record<string, unknown>): boolean;
+  static makeEmptyMap(): void;
+  static loadMapData(mapId: number): void;
+  static isMapLoaded(): boolean
+  static isMapObject(object: Record<string, unknown>): boolean;
 
-  extractArrayMetadata(array: unknown[]): void;
-  extractMetadata(data: Record<string, unknown>): void;
+  static extractArrayMetadata(array: unknown[]): void;
+  static extractMetadata(data: Record<string, unknown>): void;
 
-  checkError(): void;
+  static checkError(): void;
 
-  setupBattleTest(): void;
-  isBattleTest(): boolean;
+  static setupBattleTest(): void;
+  static isBattleTest(): boolean;
 
-  setupEventTest(): void;
-  isEventTest(): boolean;
+  static setupEventTest(): void;
+  static isEventTest(): boolean;
 
-  isSkill(item: unknown): item is DataSkill;
-  isItem(item: unknown): item is DataItem;
-  isWeapon(item: unknown): item is DataWeapon;
-  isArmor(item: unknown): item is DataArmor;
+  static isSkill(item: unknown): item is DataSkill;
+  static isItem(item: unknown): item is DataItem;
+  static isWeapon(item: unknown): item is DataWeapon;
+  static isArmor(item: unknown): item is DataArmor;
 
-  setupNewGame(): void;
-  createGameObjects(): void;
+  static setupNewGame(): void;
+  static createGameObjects(): void;
 
-  isAnySavefileExists(): boolean;
-  savefileExists(savefileId: number): boolean;
+  static isAnySavefileExists(): boolean;
+  static savefileExists(savefileId: number): boolean;
 
-  latestSavefileId(): number;
-  earliestSavefileId(): number;
-  emptySavefileId(): number;
+  static latestSavefileId(): number;
+  static earliestSavefileId(): number;
+  static emptySavefileId(): number;
 
-  loadAllSavefileImages(): void;
-  loadSavefileImages(info: SavefileInfo): void;
+  static loadAllSavefileImages(): void;
+  static loadSavefileImages(info: SavefileInfo): void;
 
-  maxSavefiles(): number;
+  static maxSavefiles(): number;
 
-  savefileInfo(savefileId: number): SavefileInfo;
+  static savefileInfo(savefileId: number): SavefileInfo;
 
-  saveGame(savefileId: number): Promise<number>;
-  makeSavename(savefileId: number): string;
-  makeSavefileForNewGame(): void;
-  makeSavefileInfo(): SavefileInfo;
-  makeSaveContents(): SavefileContent;
+  static saveGame(savefileId: number): Promise<number>;
+  static makeSavename(savefileId: number): string;
+  static makeSavefileForNewGame(): void;
+  static makeSavefileInfo(): SavefileInfo;
+  static makeSaveContents(): SavefileContent;
 
-  loadGame(savefileId: number): Promise<number>;
-  extractSaveContents(contents: SavefileContent): void;
+  static loadGame(savefileId: number): Promise<number>;
+  static extractSaveContents(contents: SavefileContent): void;
 
-  correctDataErrors(): void;
+  static correctDataErrors(): void;
 
 }
