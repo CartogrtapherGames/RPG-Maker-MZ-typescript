@@ -13,10 +13,10 @@ declare interface SavefileContent {
   switches: Game_Switches;
   variables: Game_Variables;
   selfSwitches: Game_SelfSwitches;
-  actors/*:  Game_Actors */; // FIXME
+  actors: Game_Actors;
   party: Game_Party;
-  map/*: Game_Map */; // FIXME
-  player/*: Game_Player */; // FIXME
+  map: Game_Map;
+  player: Game_Player;
 }
 
 declare class DataManager {

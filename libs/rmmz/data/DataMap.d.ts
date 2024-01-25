@@ -3,8 +3,8 @@ interface DataMap {
   autoplayBgs: boolean;
   battleback1Name: string;
   battleback2Name: string;
-  bgm: Bgm;
-  bgs: Bgm;
+  bgm: RPG.Bgm;
+  bgs: RPG.Bgm;
   disableDashing: boolean;
   displayName: string;
   encounterList: RPG.EncounterList[];
