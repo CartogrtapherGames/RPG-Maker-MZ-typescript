@@ -18,5 +18,4 @@ declare class Scene_Splash extends Scene_Base {
   updateWaitCount(): boolean;
   checkSkip(): void;
   gotoTitle(): void;
-  
 }

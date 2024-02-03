@@ -3,7 +3,7 @@
  */
 declare class Bitmap {
 
-  constructor(width: number, height: number);
+  constructor(width?: number, height?: number);
 
   public readonly url: string;
   public readonly baseTexture : PIXI.BaseTexture;
