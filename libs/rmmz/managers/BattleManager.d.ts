@@ -5,188 +5,188 @@ declare enum Result {
 }
 
 declare class BattleManager {
-  protected _phase: String;
-  protected _inputting: boolean;
-  protected _canEscape: boolean;
-  protected _canLose: boolean;
-  protected _battleTest: boolean;
-  protected _eventCallback: (result: Result) => void;
+  protected static _phase: String;
+  protected static _inputting: boolean;
+  protected static _canEscape: boolean;
+  protected static _canLose: boolean;
+  protected static _battleTest: boolean;
+  protected static _eventCallback: (result: Result) => void;
 
-  protected _preemptive: boolean;
-  protected _surprise: boolean;
+  protected static _preemptive: boolean;
+  protected static _surprise: boolean;
 
-  protected _currentActor: Game_Actor;
-  protected _actionForcedBattler: Game_Actor | Game_Enemy | null;
+  protected static _currentActor: Game_Actor;
+  protected static _actionForcedBattler: Game_Actor | Game_Enemy | null;
 
-  protected _mapBgm: AudioManager.CurrentAudio;
-  protected _mapBgs: AudioManager.CurrentAudio;
+  protected static _mapBgm: CurrentAudio;
+  protected static _mapBgs: CurrentAudio;
 
-  protected _targets: Array<Game_Battler>;
-  protected _logWindow: Window_BattleLog;
-  protected _spriteset: Spriteset_Battle;
-  protected _escapeRatio: number;
-  protected _escaped: boolean;
-  protected _rewards: Game_Item[];
+  protected static _targets: Array<Game_Battler>;
+  protected static _logWindow: Window_BattleLog;
+  protected static _spriteset: Spriteset_Battle;
+  protected static _escapeRatio: number;
+  protected static _escaped: boolean;
+  protected static _rewards: Game_Item[];
 
-  protected _tpbNeedsPartCommand: boolean;
+  protected static _tpbNeedsPartCommand: boolean;
   
 
-  setup(troopId: number, canEscape: boolean, canLose: boolean): void;
-  initMembers(): void;
-  isTpb(): boolean;
-  isActiveTpb(): boolean;
-  isBattleTest(): boolean;
+  static setup(troopId: number, canEscape: boolean, canLose: boolean): void;
+  static initMembers(): void;
+  static isTpb(): boolean;
+  static isActiveTpb(): boolean;
+  static isBattleTest(): boolean;
 
-  setBattleTest(battleTest: boolean): void;
-  setEventCallback(callback: (result: Result) => void): void;
-  setLogWindow(logWindow: Window_BattleLog): void;
-  setSpriteset(spriteset: Spriteset_Battle): void;
+  static setBattleTest(battleTest: boolean): void;
+  static setEventCallback(callback: (result: Result) => void): void;
+  static setLogWindow(logWindow: Window_BattleLog): void;
+  static setSpriteset(spriteset: Spriteset_Battle): void;
 
-  onEncounter(): void;
+  static onEncounter(): void;
 
-  ratePreemptive(): number;
-  rateSurprise(): number;
+  static ratePreemptive(): number;
+  static rateSurprise(): number;
 
-  saveBgmAndBgs(): void;
-  playBattleBgm(): void;
-  playVictoryMe(): void;
-  playDefeatMe(): void;
-  replayBgmAndBgs(): void;
+  static saveBgmAndBgs(): void;
+  static playBattleBgm(): void;
+  static playVictoryMe(): void;
+  static playDefeatMe(): void;
+  static replayBgmAndBgs(): void;
 
-  makeEscapeRatio(): void;
+  static makeEscapeRatio(): void;
 
-  update(timeActive: number): void;
+  static update(timeActive: number): void;
 
-  updatePhase(timeActive: number): void;
-  updateEvent(): void;
-  updateEventMain(): boolean;
+  static updatePhase(timeActive: number): void;
+  static updateEvent(): void;
+  static updateEventMain(): boolean;
 
-  isBusy(): boolean;
+  static isBusy(): boolean;
 
-  updateTpbInput(): void;
+  static updateTpbInput(): void;
 
-  checkTpbInputClose(): void;
-  checkTpbInputOpen(): void;
+  static checkTpbInputClose(): void;
+  static checkTpbInputOpen(): void;
 
-  isPartyTpbInputtable(): boolean;
+  static isPartyTpbInputtable(): boolean;
 
-  needsActorInputCancel(): boolean;
+  static needsActorInputCancel(): boolean;
 
-  isTpbMainPhase(): boolean;
-  isInputting(): boolean;
-  isInTurn(): boolean;
+  static isTpbMainPhase(): boolean;
+  static isInputting(): boolean;
+  static isInTurn(): boolean;
 
-  isTurnEnd(): boolean;
-  isAborting(): boolean;
-  isBattleEnd(): boolean;
+  static isTurnEnd(): boolean;
+  static isAborting(): boolean;
+  static isBattleEnd(): boolean;
 
-  canEscape(): boolean;
-  canLose(): boolean;
+  static canEscape(): boolean;
+  static canLose(): boolean;
 
-  isEscaped(): boolean;
+  static isEscaped(): boolean;
 
-  actor(): Game_Actor;
+  static actor(): Game_Actor;
 
-  startBattle(): void;
+  static startBattle(): void;
 
-  displayStartMessages(): void;
+  static displayStartMessages(): void;
 
-  startInput(): void;
+  static startInput(): void;
 
-  inputtingAction(): Game_Action;
+  static inputtingAction(): Game_Action;
 
-  selectNextCommand(): void;
+  static selectNextCommand(): void;
 
-  selectNextActor(): void;
-  selectPreviousCommand(): void;
-  selectPreviousActor(): void;
+  static selectNextActor(): void;
+  static selectPreviousCommand(): void;
+  static selectPreviousActor(): void;
 
-  changeCurrentActor(forward: boolean): void;
+  static changeCurrentActor(forward: boolean): void;
 
-  startActorInput(): void;
+  static startActorInput(): void;
 
-  finishActorInput(): void;
-  cancelActorInput(): void;
+  static finishActorInput(): void;
+  static cancelActorInput(): void;
 
-  updateStart(): void;
+  static updateStart(): void;
 
-  startTurn(): void;
+  static startTurn(): void;
 
-  updateTurn(timeActive: boolean): void;
-  updateTpb(): void;
-  updateAllTpbBattlers(): void;
-  updateTpbBattler(battler): void;
+  static updateTurn(timeActive: boolean): void;
+  static updateTpb(): void;
+  static updateAllTpbBattlers(): void;
+  static updateTpbBattler(battler: Game_Battler): void;
 
-  checkTpbTurnEnd(): void;
+  static checkTpbTurnEnd(): void;
 
-  processTurn(): void;
+  static processTurn(): void;
 
-  endBattlerActions(battler): void;
+  static endBattlerActions(battler: Game_Battler): void;
 
-  endTurn(): void;
+  static endTurn(): void;
 
-  endAllBattlersTurn(): void;
+  static endAllBattlersTurn(): void;
 
-  displayBattlerStatus(battler: Game_Battler, current: boolean): void;
+  static displayBattlerStatus(battler: Game_Battler, current: boolean): void;
 
-  updateTurnEnd(): void;
+  static updateTurnEnd(): void;
 
-  getNextSubject(): Game_Battler | null;
+  static getNextSubject(): Game_Battler | null;
 
-  allBattleMembers(): Game_Battler[];
+  static allBattleMembers(): Game_Battler[];
 
-  makeActionOrders(): void;
+  static makeActionOrders(): void;
 
-  startAction(): void;
-  updateAction(): void;
-  endAction(): void;
+  static startAction(): void;
+  static updateAction(): void;
+  static endAction(): void;
 
-  invokeAction(subject: Game_Battler, target: Game_Battler): void;
-  invokeNormalAction(subject: Game_Battler, target: Game_Battler): void;
-  invokeCounterAttack(subject: Game_Battler, target: Game_Battler): void;
-  invokeMagicReflection(subject: Game_Battler, target: Game_Battler): void;
+  static invokeAction(subject: Game_Battler, target: Game_Battler): void;
+  static invokeNormalAction(subject: Game_Battler, target: Game_Battler): void;
+  static invokeCounterAttack(subject: Game_Battler, target: Game_Battler): void;
+  static invokeMagicReflection(subject: Game_Battler, target: Game_Battler): void;
 
-  applySubstitute(target: Game_Battler): Game_Battler;
-  checkSubstitute(target: Game_Battler): boolean;
+  static applySubstitute(target: Game_Battler): Game_Battler;
+  static checkSubstitute(target: Game_Battler): boolean;
 
-  isActionForced(): boolean;
+  static isActionForced(): boolean;
 
-  forceAction(battler: Game_Battler): void;
+  static forceAction(battler: Game_Battler): void;
 
-  processForcedAction(): void;
+  static processForcedAction(): void;
 
-  abort(): void;
+  static abort(): void;
 
-  checkBattleEnd(): boolean;
-  checkAbort(): boolean;
+  static checkBattleEnd(): boolean;
+  static checkAbort(): boolean;
 
-  processVictory(): void;
-  processEscape(): boolean;
+  static processVictory(): void;
+  static processEscape(): boolean;
 
-  onEscapeSuccess(): void;
-  onEscapeFailure(): void;
+  static onEscapeSuccess(): void;
+  static onEscapeFailure(): void;
 
-  processAbort(): void;
-  processDefeat(): void;
+  static processAbort(): void;
+  static processDefeat(): void;
 
-  endBattle(result: Result): void;
+  static endBattle(result: Result): void;
 
-  updateBattleEnd(): void;
+  static updateBattleEnd(): void;
 
-  makeRewards(): void;
+  static makeRewards(): void;
 
-  displayVictoryMessage(): void;
-  displayDefeatMessage(): void;
-  displayEscapeSuccessMessage(): void;
-  displayEscapeFailureMessage();
-  displayRewards(): void;
-  displayExp(): void;
-  displayGold(): void;
-  displayDropItems(): void;
+  static displayVictoryMessage(): void;
+  static displayDefeatMessage(): void;
+  static displayEscapeSuccessMessage(): void;
+  static displayEscapeFailureMessage(): void;
+  static displayRewards(): void;
+  static displayExp(): void;
+  static displayGold(): void;
+  static displayDropItems(): void;
 
-  gainRewards(): void;
-  gainExp(): void;
-  gainGold(): void;
-  gainDropItems(): void;
+  static gainRewards(): void;
+  static gainExp(): void;
+  static gainGold(): void;
+  static gainDropItems(): void;
 
 }

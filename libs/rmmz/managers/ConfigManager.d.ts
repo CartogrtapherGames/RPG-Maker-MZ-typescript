@@ -21,12 +21,12 @@ declare class ConfigManager {
 
   protected _isLoaded: boolean;
 
-  load(): void;
-  save(): void;
-  isLoaded(): boolean;
-  makeData(): ConfigData;
-  applyData(config: ConfigData): void;
-  readFlag(config: ConfigData, name: string, defaultValue: ConfigData): ConfigData;
-  readVolume(config: ConfigData, name: string): number;
+  static load(): void;
+  static save(): void;
+  static isLoaded(): boolean;
+  static makeData(): ConfigData;
+  static applyData(config: ConfigData): void;
+  static readFlag(config: ConfigData, name: string, defaultValue: ConfigData): ConfigData;
+  static readVolume(config: ConfigData, name: string): number;
 
 }

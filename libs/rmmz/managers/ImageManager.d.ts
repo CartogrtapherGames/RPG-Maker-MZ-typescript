@@ -20,31 +20,31 @@ declare class ImageManager {
    * and _cache contains images used for the current scene.
    * e.g., { 'img/system/IconSet.png': Bitmap }
    */
-  protected _system: CacheEntry[]
-  protected _emptyBitmap: Bitmap;
+  protected static _system: CacheEntry[]
+  protected static _emptyBitmap: Bitmap;
 
-  loadAnimation(filename: string): Bitmap;
-  loadBattleback1(filename: string): Bitmap;
-  loadBattleback2(filename: string): Bitmap;
-  loadEnemy(filename: string): Bitmap;
-  loadCharacter(filename: string): Bitmap;
-  loadFace(filename: string): Bitmap;
-  loadParallax(filename: string): Bitmap;
-  loadPicture(filename: string): Bitmap;
-  loadSvActor(filename: string): Bitmap;
-  loadSvEnemy(filename: string): Bitmap;
-  loadSystem(filename: string): Bitmap;
-  loadTileset(filename: string): Bitmap;
-  loadTitle1(filename: string): Bitmap;
-  loadTitle2(filename: string): Bitmap;
+  static loadAnimation(filename: string): Bitmap;
+  static loadBattleback1(filename: string): Bitmap;
+  static loadBattleback2(filename: string): Bitmap;
+  static loadEnemy(filename: string): Bitmap;
+  static loadCharacter(filename: string): Bitmap;
+  static loadFace(filename: string): Bitmap;
+  static loadParallax(filename: string): Bitmap;
+  static loadPicture(filename: string): Bitmap;
+  static loadSvActor(filename: string): Bitmap;
+  static loadSvEnemy(filename: string): Bitmap;
+  static loadSystem(filename: string): Bitmap;
+  static loadTileset(filename: string): Bitmap;
+  static loadTitle1(filename: string): Bitmap;
+  static loadTitle2(filename: string): Bitmap;
 
-  loadBitmap(folder: string, filename: string): Bitmap;
-  loadBitmapFromUrl(url: string): Bitmap;
-  clear(): void;
-  isReady(): boolean;
-  throwLoadError(bitmap: Bitmap): void;
-  isObjectCharacter(filename: string): boolean;
-  isBigCharacter(filename: string): boolean;
-  isZeroParallax(filename: string): boolean;
+  static loadBitmap(folder: string, filename: string): Bitmap;
+  static loadBitmapFromUrl(url: string): Bitmap;
+  static clear(): void;
+  static isReady(): boolean;
+  static throwLoadError(bitmap: Bitmap): void;
+  static isObjectCharacter(filename: string): boolean;
+  static isBigCharacter(filename: string): boolean;
+  static isZeroParallax(filename: string): boolean;
 
 }
