@@ -17,50 +17,50 @@ declare abstract class Scene_Base extends Stage {
     /**
      * the create method of the scene.
      */
-     abstract create(): void;
+    create(): void;
 
-     isActive(): boolean;
+    isActive(): boolean;
 
-     isReady(): boolean;
+    isReady(): boolean;
 
-     start(): void;
+    start(): void;
 
-     update(): void;
+    update(): void;
 
-     stop(): void;
+    stop(): void;
 
-     isStarted(): boolean;
+    isStarted(): boolean;
 
-     isBusy(): boolean;
+    isBusy(): boolean;
 
-     isFading(): boolean;
+    isFading(): boolean;
 
-     terminate(): void;
+    terminate(): void;
 
-     createWindowLayer(): void;
+    createWindowLayer(): void;
 
-     addWindow(window: Window): void;
+    addWindow(window: Window): void;
 
     /**
      *
      * @param {number} duration the duration
      * @param {boolean} white whether the fadein should be white or not.
      */
-     startFadeIn(duration: number, white?: boolean): void;
+    startFadeIn(duration: number, white?: boolean): void;
 
-     startFadeOut(duration: number, white?: boolean): void;
+    startFadeOut(duration: number, white?: boolean): void;
 
-     createColorFilter(): void;
+    createColorFilter(): void;
 
-     updateColorFilter(): void;
+    updateColorFilter(): void;
 
-     updateFade(): void;
+    updateFade(): void;
 
-     updateChildren(): void;
+    updateChildren(): void;
 
-     popScene(): void;
+    popScene(): void;
 
-     checkGameover(): void;
+    checkGameover(): void;
 
     public fadeOutAll(): void;
 
@@ -78,27 +78,27 @@ declare abstract class Scene_Base extends Stage {
 
     public isRightInputMode(): boolean;
 
-     mainCommandWidth(): number;
+    mainCommandWidth(): number;
 
-     buttonAreaTop(): number;
+    buttonAreaTop(): number;
 
-     buttonAreaBottom(): number;
+    buttonAreaBottom(): number;
 
-     buttonAreaHeight(): number;
+    buttonAreaHeight(): number;
 
-     buttonY(): number;
+    buttonY(): number;
 
-     calcWindowHeight(numLines: number, selectable: boolean): number;
+    calcWindowHeight(numLines: number, selectable: boolean): number;
 
-     requestAutosave(): void;
+    requestAutosave(): void;
 
-     isAutosaveEnabled(): boolean;
+    isAutosaveEnabled(): boolean;
 
-     executeAutosave(): void;
+    executeAutosave(): void;
 
-     onAutosaveSucess(): void;
+    onAutosaveSucess(): void;
 
-     onAutosaveFailure(): void;
+    onAutosaveFailure(): void;
 }
 
 
