@@ -1,6 +1,6 @@
-import SE = RPG.SE;
 
-export interface DataSystem {
+
+interface DataSystem {
   advanced: RPG.Advanced;
   airship: RPG.Airship;
   armorTypes: string[];
@@ -36,7 +36,7 @@ export interface DataSystem {
   partyMembers: number[];
   ship: RPG.Airship;
   skillTypes: string[];
-  sounds: SE[];
+  sounds: RPG.SE[];
   startMapId: number;
   startX: number;
   startY: number;
@@ -54,4 +54,5 @@ export interface DataSystem {
   weaponTypes: string[];
   windowTone: number[];
   tileSize: 48 | 32 | 24 | 16;
+  optSplashScreen: boolean;
 }

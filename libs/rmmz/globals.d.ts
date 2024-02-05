@@ -1,0 +1,31 @@
+
+
+declare let $dataActors: DataActor[];
+declare let $dataClasses: DataClass[];
+declare let $dataSkills: DataSkill[];
+declare let $dataItems: DataItem[];
+declare let $dataWeapons: DataWeapon[];
+declare let $dataArmors: DataArmor[];
+declare let $dataEnemies: DataEnemy[];
+declare let $dataTroops: DataTroop[];
+declare let $dataStates: DataState[];
+declare let $dataAnimations: DataAnimation[] | DataAnimationMV[];
+declare let $dataTilesets: DataTileset[];
+declare let $dataCommonEvents: DataCommonEvent[];
+declare let $dataSystem: DataSystem[];
+declare let $dataMapInfos: DataMapInfo[];
+declare let $dataMap: DataMap[];
+declare let $gameTemp: Game_Temp;
+declare let $gameSystem: Game_System;
+declare let $gameScreen: Game_Screen;
+declare let $gameTimer: Game_Timer;
+declare let $gameMessage: Game_Message;
+declare let $gameSwitches: Game_Switches;
+declare let $gameVariables: Game_Variables;
+declare let $gameSelfSwitches: Game_SelfSwitches;
+declare let $gameActors: Game_Actors;
+declare let $gameParty: Game_Party;
+declare let $gameTroop: Game_Troop;
+declare let $gameMap: Game_Map;
+declare let $gamePlayer: Game_Player;
+declare let $testEvent: unknown; 
